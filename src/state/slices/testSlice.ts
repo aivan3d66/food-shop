@@ -1,10 +1,39 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from '../store'
 
+type PopularityType = 'hit' | 'new' | 'default'
+
+export type GoodType = {
+    name: string,
+    popularity: PopularityType,
+    image: string,
+    price: number,
+    type: string,
+}
+
 const testSlice = createSlice({
     name: 'signIn',
     initialState: {
-        status: 'App is ready'
+        goods: [
+            {name: 'Burger', type: 'burger', price: 144, popularity: 'new', image: 'https://i.ibb.co/qyfx5wv/burger.png'},
+            {name: 'Burger', type: 'burger', price: 144, popularity: 'hit', image: 'https://i.ibb.co/qyfx5wv/burger.png'},
+            {name: 'Burger', type: 'burger', price: 144, popularity: 'default', image: 'https://i.ibb.co/qyfx5wv/burger.png'},
+            {name: 'Burger', type: 'burger', price: 144, popularity: 'default', image: 'https://i.ibb.co/qyfx5wv/burger.png'},
+            {name: 'Burger', type: 'burger', price: 144, popularity: 'default', image: 'https://i.ibb.co/qyfx5wv/burger.png'},
+            {name: 'Burger', type: 'burger', price: 144, popularity: 'hit', image: 'https://i.ibb.co/qyfx5wv/burger.png'},
+            {name: 'Burger', type: 'burger', price: 144, popularity: 'default', image: 'https://i.ibb.co/qyfx5wv/burger.png'},
+
+            {name: 'Twister', type: 'twister', price: 144, popularity: 'hit', image: 'https://i.ibb.co/jzgC8fZ/twister.png'},
+            {name: 'Twister', type: 'twister', price: 144, popularity: 'hit', image: 'https://i.ibb.co/jzgC8fZ/twister.png'},
+            {name: 'Twister', type: 'twister', price: 144, popularity: 'hit', image: 'https://i.ibb.co/jzgC8fZ/twister.png'},
+            {name: 'Twister', type: 'twister', price: 144, popularity: 'default', image: 'https://i.ibb.co/jzgC8fZ/twister.png'},
+
+            {name: 'Strips', type: 'strips', price: 144, popularity: 'hit', image: 'https://i.ibb.co/F7bB8Cn/strips.png'},
+            {name: 'Strips', type: 'strips', price: 144, popularity: 'hit', image: 'https://i.ibb.co/F7bB8Cn/strips.png'},
+            {name: 'Strips', type: 'strips', price: 144, popularity: 'default', image: 'https://i.ibb.co/F7bB8Cn/strips.png'},
+            {name: 'Strips', type: 'strips', price: 144, popularity: 'default', image: 'https://i.ibb.co/F7bB8Cn/strips.png'},
+        ] as Array<GoodType>,
+        status: 'App is ready',
     },
     reducers: {},
     extraReducers: {},
