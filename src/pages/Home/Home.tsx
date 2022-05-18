@@ -1,11 +1,19 @@
-import { useAppSelector } from '../../utils/helpers'
+import Header from '../../components/UI/Header'
+import Delivery from '../../components/UI/Delivery'
+import Filter from '../../components/UI/Filter'
+import Goods from '../../components/UI/Goods'
+import Menu from '../../components/UI/Menu'
+import Footer from '../../components/UI/Footer'
 
 export const Home = () => {
-    const { status } = useAppSelector((state) => state.testReducer)
-
     return (
-        <div>
-            Home page. Status: {status}
-        </div>
+        <>
+            <Header />
+            <Delivery />
+            <Filter />
+            <Goods />
+            <Menu />
+            <Footer />
+        </>
     )
 }
