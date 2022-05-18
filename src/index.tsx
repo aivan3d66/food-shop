@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './index.css'
 import reportWebVitals from './reportWebVitals'
 import AppRouter from './components/BLL/AppRouter'
 import { BrowserRouter } from 'react-router-dom'
