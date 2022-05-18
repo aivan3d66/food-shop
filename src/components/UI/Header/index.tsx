@@ -1,14 +1,16 @@
-import { Header } from './component'
+import { Header, HeaderWrapper } from './component'
 
 export default () => {
     return (
         <Header>
-            <div>
-                Menu
-            </div>
-            <div>
-                Basket
-            </div>
+            <HeaderWrapper>
+                <div>
+                    Menu
+                </div>
+                <div>
+                    Basket
+                </div>
+            </HeaderWrapper>
         </Header>
     )
 }
