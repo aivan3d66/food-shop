@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from '../store'
 
-type PopularityType = 'hit' | 'new' | 'default'
+export type PopularityType = 'hit' | 'new' | 'default'
 
 export type GoodType = {
     name: string,
