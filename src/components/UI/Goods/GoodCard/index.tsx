@@ -1,5 +1,6 @@
 import { CardControl, CardFlag, CardText, GoodCard } from './component'
 import { PopularityType } from '../../../../state/slices/testSlice'
+import AddButton from '../../AddButton'
 
 type GoodCardPropsType = {
     name: string,
@@ -14,7 +15,7 @@ export default ({ name, image, price, popularity }: GoodCardPropsType) => {
             <CardFlag>{popularity}</CardFlag>
             <CardControl>
                 <img src={image} alt='good image' />
-                <span>+</span>
+                <AddButton/>
             </CardControl>
             <CardText>
                 <h3>{name}</h3>

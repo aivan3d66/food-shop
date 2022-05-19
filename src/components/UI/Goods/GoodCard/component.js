@@ -52,20 +52,6 @@ export const CardControl = styled.div`
     transition: 0.3s;
     transform: scale(0.9);
   }
-  
-  span {
-    position: absolute;
-    bottom: 0;
-    right: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    background-color: #ffffff;
-    border-radius: 50%;
-    box-shadow: 0 1px 5px 1px #bababa;
-  }
 `
 
 export const CardText = styled.div`
