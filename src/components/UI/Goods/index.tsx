@@ -19,7 +19,7 @@ export default () => {
                         {
                             burgersCategory.map((m) => {
                                 return <GoodCard
-                                    key={useId()}
+                                    key={m.id}
                                     name={m.name}
                                     image={m.image}
                                     popularity={m.popularity}
@@ -36,7 +36,7 @@ export default () => {
                     {
                         twistersCategory.map((m) => {
                             return <GoodCard
-                                key={useId()}
+                                key={m.id}
                                 name={m.name}
                                 image={m.image}
                                 popularity={m.popularity}
@@ -53,7 +53,7 @@ export default () => {
                         {
                             stripsCategory.map((m) => {
                                 return <GoodCard
-                                    key={useId()}
+                                    key={m.id}
                                     name={m.name}
                                     image={m.image}
                                     popularity={m.popularity}
