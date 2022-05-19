@@ -1,44 +1,178 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { RootState } from '../store'
 
 export type PopularityType = 'hit' | 'new' | 'def'
+export type DeliveryFilterType = 'all' | 'delivery' | 'noDelivery'
 export type FilterType = 'burger'
-
 export type GoodType = {
+    id: string,
     name: string,
     popularity: PopularityType,
     image: string,
     price: number,
     type: string,
+    delivery: boolean,
+}
+
+type InitialStateType = {
+    filter: string,
+    deliveryFilter: DeliveryFilterType,
+    goods: Array<GoodType>,
+    status: string,
+    basketPrice: number,
 }
 
 const testSlice = createSlice({
-    name: 'signIn',
+    name: 'shop-action',
     initialState: {
         filter: 'burger',
+        deliveryFilter: 'all',
         goods: [
-            {name: 'Burger', type: 'burger', price: 144, popularity: 'new', image: 'https://i.ibb.co/qyfx5wv/burger.png'},
-            {name: 'Burger', type: 'burger', price: 144, popularity: 'hit', image: 'https://i.ibb.co/qyfx5wv/burger.png'},
-            {name: 'Burger', type: 'burger', price: 144, popularity: 'def', image: 'https://i.ibb.co/qyfx5wv/burger.png'},
-            {name: 'Burger', type: 'burger', price: 144, popularity: 'def', image: 'https://i.ibb.co/qyfx5wv/burger.png'},
-            {name: 'Burger', type: 'burger', price: 144, popularity: 'def', image: 'https://i.ibb.co/qyfx5wv/burger.png'},
-            {name: 'Burger', type: 'burger', price: 144, popularity: 'hit', image: 'https://i.ibb.co/qyfx5wv/burger.png'},
-            {name: 'Burger', type: 'burger', price: 144, popularity: 'def', image: 'https://i.ibb.co/qyfx5wv/burger.png'},
+            {
+                id: '1',
+                name: 'Burger',
+                type: 'burger',
+                price: 144,
+                popularity: 'new',
+                delivery: true,
+                image: 'https://i.ibb.co/qyfx5wv/burger.png',
+            },
+            {
+                id: '2',
+                name: 'Burger',
+                type: 'burger',
+                price: 144,
+                popularity: 'hit',
+                delivery: false,
+                image: 'https://i.ibb.co/qyfx5wv/burger.png',
+            },
+            {
+                id: '3',
+                name: 'Burger',
+                type: 'burger',
+                price: 144,
+                popularity: 'def',
+                delivery: false,
+                image: 'https://i.ibb.co/qyfx5wv/burger.png',
+            },
+            {
+                id: '4',
+                name: 'Burger',
+                type: 'burger',
+                price: 144,
+                popularity: 'def',
+                delivery: true,
+                image: 'https://i.ibb.co/qyfx5wv/burger.png',
+            },
+            {
+                id: '5',
+                name: 'Burger',
+                type: 'burger',
+                price: 144,
+                popularity: 'def',
+                delivery: true,
+                image: 'https://i.ibb.co/qyfx5wv/burger.png',
+            },
+            {
+                id: '6',
+                name: 'Burger',
+                type: 'burger',
+                price: 144,
+                popularity: 'hit',
+                delivery: false,
+                image: 'https://i.ibb.co/qyfx5wv/burger.png',
+            },
+            {
+                id: '7',
+                name: 'Burger',
+                type: 'burger',
+                price: 144,
+                popularity: 'def',
+                delivery: true,
+                image: 'https://i.ibb.co/qyfx5wv/burger.png',
+            },
 
-            {name: 'Twister', type: 'twister', price: 144, popularity: 'hit', image: 'https://i.ibb.co/jzgC8fZ/twister.png'},
-            {name: 'Twister', type: 'twister', price: 144, popularity: 'hit', image: 'https://i.ibb.co/jzgC8fZ/twister.png'},
-            {name: 'Twister', type: 'twister', price: 144, popularity: 'hit', image: 'https://i.ibb.co/jzgC8fZ/twister.png'},
-            {name: 'Twister', type: 'twister', price: 144, popularity: 'def', image: 'https://i.ibb.co/jzgC8fZ/twister.png'},
+            {
+                id: '8',
+                name: 'Twister',
+                type: 'twister',
+                price: 144,
+                popularity: 'hit',
+                delivery: true,
+                image: 'https://i.ibb.co/jzgC8fZ/twister.png',
+            },
+            {
+                id: '9',
+                name: 'Twister',
+                type: 'twister',
+                price: 144,
+                popularity: 'hit',
+                delivery: false,
+                image: 'https://i.ibb.co/jzgC8fZ/twister.png',
+            },
+            {
+                id: '10',
+                name: 'Twister',
+                type: 'twister',
+                price: 144,
+                popularity: 'hit',
+                delivery: true,
+                image: 'https://i.ibb.co/jzgC8fZ/twister.png',
+            },
+            {
+                id: '11',
+                name: 'Twister',
+                type: 'twister',
+                price: 144,
+                popularity: 'def',
+                delivery: true,
+                image: 'https://i.ibb.co/jzgC8fZ/twister.png',
+            },
 
-            {name: '3 Strips', type: 'strips', price: 144, popularity: 'hit', image: 'https://i.ibb.co/F7bB8Cn/strips.png'},
-            {name: '3 Strips', type: 'strips', price: 144, popularity: 'hit', image: 'https://i.ibb.co/F7bB8Cn/strips.png'},
-            {name: '3 Strips', type: 'strips', price: 144, popularity: 'def', image: 'https://i.ibb.co/F7bB8Cn/strips.png'},
-            {name: '3 Strips', type: 'strips', price: 144, popularity: 'def', image: 'https://i.ibb.co/F7bB8Cn/strips.png'},
-        ] as Array<GoodType>,
+            {
+                id: '12',
+                name: '3 Strips',
+                type: 'strips',
+                price: 144,
+                popularity: 'hit',
+                delivery: true,
+                image: 'https://i.ibb.co/F7bB8Cn/strips.png',
+            },
+            {
+                id: '13',
+                name: '3 Strips',
+                type: 'strips',
+                price: 144,
+                popularity: 'hit',
+                delivery: true,
+                image: 'https://i.ibb.co/F7bB8Cn/strips.png',
+            },
+            {
+                id: '14',
+                name: '3 Strips',
+                type: 'strips',
+                price: 144,
+                popularity: 'def',
+                delivery: false,
+                image: 'https://i.ibb.co/F7bB8Cn/strips.png',
+            },
+            {
+                id: '15',
+                name: '3 Strips',
+                type: 'strips',
+                price: 144,
+                popularity: 'def',
+                delivery: true,
+                image: 'https://i.ibb.co/F7bB8Cn/strips.png',
+            },
+        ],
         status: 'App is ready',
         basketPrice: 0,
+    } as InitialStateType,
+    reducers: {
+        changeDeliveryToggle: (state, action: PayloadAction<{ deliveryFilter: DeliveryFilterType }>) => {
+            state.deliveryFilter = action.payload.deliveryFilter
+        },
     },
-    reducers: {},
     extraReducers: {},
 })
 
