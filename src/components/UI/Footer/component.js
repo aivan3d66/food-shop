@@ -12,17 +12,21 @@ export const FooterWrapper = styled.div`
   max-width: 1248px;
   min-height: 100px;
   margin: 0 auto;
-  border: 1px solid red;
   
   ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 160px;
-    border: 1px solid green;
     
     li {
-      border: 1px solid blue;
+      font-size: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+      
+      &:hover {
+        color: #E4002B;
+      }
     }
   }
 `
