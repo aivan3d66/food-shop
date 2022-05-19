@@ -11,11 +11,11 @@ export default () => {
 
     const setDeliveryHandler = () => {
         setDeliveryState(true)
-        changeDeliveryToggle({ deliveryFilter: 'all' })
+        changeDeliveryToggle({ deliveryFilter: true })
     }
     const setPickUpHandler = () => {
         setDeliveryState(false)
-        changeDeliveryToggle({ deliveryFilter: 'delivery' })
+        changeDeliveryToggle({ deliveryFilter: false })
     }
 
     return (
