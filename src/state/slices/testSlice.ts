@@ -34,6 +34,7 @@ const testSlice = createSlice({
             {name: 'Strips', type: 'strips', price: 144, popularity: 'default', image: 'https://i.ibb.co/F7bB8Cn/strips.png'},
         ] as Array<GoodType>,
         status: 'App is ready',
+        basketPrice: 0,
     },
     reducers: {},
     extraReducers: {},

@@ -17,7 +17,7 @@ export default ({name, image, price, popularity}: GoodCardPropsType) => {
             </div>
             <div>
                 <h3>{name}</h3>
-                <p>{price}</p>
+                <p>{price} &#8381;</p>
             </div>
         </GoodCard>
     )
