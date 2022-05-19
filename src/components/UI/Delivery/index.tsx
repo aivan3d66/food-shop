@@ -15,10 +15,10 @@ export default () => {
                 </DeliveryHeader>
                 <DeliveryBody>
                     <label> Street
-                        <InputText />
+                        <InputText placeholder='Street'/>
                     </label>
                     <label> House
-                        <InputText />
+                        <InputText placeholder='House'/>
                     </label>
                 </DeliveryBody>
             </DeliveryWrapper>
