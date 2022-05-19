@@ -22,6 +22,11 @@ export const FilterWrapper = styled.div`
     
     li {
       cursor: pointer;
+      transition: 0.3s;
+      
+      &:hover {
+        color: #E4002B;
+      }
     }
   }
 `

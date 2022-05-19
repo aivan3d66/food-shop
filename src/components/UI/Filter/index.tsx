@@ -11,8 +11,8 @@ export default () => {
             <FilterWrapper>
                 <ul>
                     {
-                        filters.map(m => {
-                            return <li >{m}</li>
+                        filters.map((m, i: number) => {
+                            return <li key={i}>{m}</li>
                         })
                     }
                 </ul>
