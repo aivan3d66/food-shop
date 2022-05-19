@@ -11,7 +11,6 @@ export const FilterWrapper = styled.div`
   min-height: 40px;
   margin: 0 auto;
   font-size: 16px;
-  border: 1px solid red;
   
   ul {
     display: flex;
@@ -20,5 +19,9 @@ export const FilterWrapper = styled.div`
     padding: 10px 0;
     font-size: 18px;
     line-height: 24px;
+    
+    li {
+      cursor: pointer;
+    }
   }
 `
