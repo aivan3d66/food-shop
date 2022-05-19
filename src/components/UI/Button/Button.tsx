@@ -1,9 +1,12 @@
 import React, { ButtonHTMLAttributes, DetailedHTMLProps } from 'react'
 import { Button } from './component'
+import theme from '../../../theme'
 
-export default ({ name, ...restProps } : ButtonPropsType) => {
+export default ({ name, deliveryState, ...restProps } : ButtonPropsType) => {
+    const red = deliveryState === true ? theme.buttonIsActive : theme.buttonNotActive
+
     return (
-        <Button {...restProps}>
+        <Button {...restProps} red={red}>
             {name}
         </Button>
     )
@@ -12,4 +15,5 @@ export default ({ name, ...restProps } : ButtonPropsType) => {
 type DefaultButtonPropsType = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
 type ButtonPropsType = DefaultButtonPropsType & {
     name?: string,
+    deliveryState?: boolean,
 }
