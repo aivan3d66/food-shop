@@ -1,7 +1,6 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 export type PopularityType = 'hit' | 'new' | 'def'
-export type DeliveryFilterType = 'all' | 'delivery' | 'noDelivery'
 export type FilterType = 'burger'
 export type GoodType = {
     id: string,
@@ -15,7 +14,7 @@ export type GoodType = {
 
 type InitialStateType = {
     filter: string,
-    deliveryFilter: DeliveryFilterType,
+    deliveryFilter: boolean,
     goods: Array<GoodType>,
     status: string,
     basketPrice: number,
@@ -25,7 +24,7 @@ const testSlice = createSlice({
     name: 'shop-action',
     initialState: {
         filter: 'burger',
-        deliveryFilter: 'all',
+        deliveryFilter: true,
         goods: [
             {
                 id: '1',
@@ -169,7 +168,7 @@ const testSlice = createSlice({
         basketPrice: 0,
     } as InitialStateType,
     reducers: {
-        changeDeliveryToggle: (state, action: PayloadAction<{ deliveryFilter: DeliveryFilterType }>) => {
+        changeDeliveryToggle: (state, action: PayloadAction<{ deliveryFilter: boolean }>) => {
             state.deliveryFilter = action.payload.deliveryFilter
         },
     },
