@@ -47,4 +47,9 @@ export const Basket = styled.div`
   color: #ffffff;
   border-radius: 20px;
   background-color: #E4002B;
+  cursor: pointer;
+  
+  &:hover {
+    background-color: #b30000;
+  }
 `
