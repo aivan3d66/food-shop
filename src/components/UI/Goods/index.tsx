@@ -1,14 +1,13 @@
 import { Goods, GoodsWrapper, GoodsCategory } from './component'
 import { useAppSelector } from '../../../utils/helpers'
-import { useId } from 'react'
 import GoodCard from './GoodCard'
 
 export default () => {
-    const { goods } = useAppSelector((state) => state.testReducer)
+    const { goods, deliveryFilter } = useAppSelector((state) => state.testReducer)
 
-    const burgersCategory = goods.filter(f => f.type === 'burger')
-    const twistersCategory = goods.filter(f => f.type === 'twister')
-    const stripsCategory = goods.filter(f => f.type === 'strips')
+    const burgersCategory = goods.filter(f => f.type === 'burger' && f.delivery === deliveryFilter)
+    const twistersCategory = goods.filter(f => f.type === 'twister' && f.delivery === deliveryFilter)
+    const stripsCategory = goods.filter(f => f.type === 'strips' && f.delivery === deliveryFilter)
 
     return (
         <Goods>
