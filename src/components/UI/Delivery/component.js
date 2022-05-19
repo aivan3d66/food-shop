@@ -43,7 +43,6 @@ export const DeliveryBody = styled.div`
   align-items: baseline;
   font-size: 32px;
   line-height: 40px;
-  border: 1px solid red;
   
   label {
     display: flex;
