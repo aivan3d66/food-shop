@@ -8,6 +8,7 @@ export const Goods = styled.div`
 
 export const GoodsWrapper = styled.div`
   width: 100%;
+  padding: 20px 0;
   background-color: #F7F6F5;
 `
 
@@ -16,7 +17,6 @@ export const GoodsCategory = styled.div`
   min-height: 100vh;
   margin: 0 auto;
   font-size: 16px;
-  border: 1px solid red;
   
   h2 {
     font-size: 32px;

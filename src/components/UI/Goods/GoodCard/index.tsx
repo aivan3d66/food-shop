@@ -1,4 +1,4 @@
-import { GoodCard } from './component'
+import { CardControl, CardFlag, CardText, GoodCard } from './component'
 import { PopularityType } from '../../../../state/slices/testSlice'
 
 type GoodCardPropsType = {
@@ -8,17 +8,18 @@ type GoodCardPropsType = {
     price: number,
 }
 
-export default ({name, image, price, popularity}: GoodCardPropsType) => {
+export default ({ name, image, price, popularity }: GoodCardPropsType) => {
     return (
         <GoodCard>
-            <div>
-                <span>{popularity}</span>
+            <CardFlag>{popularity}</CardFlag>
+            <CardControl>
                 <img src={image} alt='good image' />
-            </div>
-            <div>
+                <span>+</span>
+            </CardControl>
+            <CardText>
                 <h3>{name}</h3>
                 <p>{price} &#8381;</p>
-            </div>
+            </CardText>
         </GoodCard>
     )
 }
