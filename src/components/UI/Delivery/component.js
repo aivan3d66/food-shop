@@ -8,7 +8,6 @@ export const Delivery = styled.div`
 
 export const DeliveryWrapper = styled.div`
   max-width: 1248px;
-  min-height: 40px;
   margin: 0 auto;
   font-size: 16px;
 `
@@ -17,7 +16,8 @@ export const DeliveryHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  max-height: 100px;
+  
   h1 {
     font-weight: 700;
     font-size: 64px;
@@ -30,10 +30,6 @@ export const DeliveryControls = styled.div`
 
   button {
     width: 200px;
-    &:last-child {
-      color: #9D9D9D;
-      background-color: #F7F6F5;
-    }
 
     &:last-child:hover {
       color: #ffffff;
@@ -47,6 +43,7 @@ export const DeliveryBody = styled.div`
   align-items: baseline;
   font-size: 32px;
   line-height: 40px;
+  border: 1px solid red;
   
   label {
     display: flex;
