@@ -13,7 +13,7 @@ export default () => {
     return (
         <Goods>
             <GoodsWrapper>
-                <GoodsCategory>
+                <GoodsCategory id='BurgersControl'>
                     <h2>Burgers</h2>
                     <ul>
                         {
@@ -30,7 +30,7 @@ export default () => {
                     </ul>
                 </GoodsCategory>
             </GoodsWrapper>
-            <GoodsCategory>
+            <GoodsCategory id='TwistersControl'>
                 <h2>Twisters</h2>
                 <ul>
                     {
@@ -47,7 +47,7 @@ export default () => {
                 </ul>
             </GoodsCategory>
             <GoodsWrapper>
-                <GoodsCategory>
+                <GoodsCategory id='ChickenControl'>
                     <h2>Chicken</h2>
                     <ul>
                         {
