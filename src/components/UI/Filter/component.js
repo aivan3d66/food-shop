@@ -11,7 +11,7 @@ export const FilterWrapper = styled.div`
   min-height: 40px;
   margin: 0 auto;
   font-size: 16px;
-  
+
   ul {
     display: flex;
     justify-content: space-between;
@@ -19,11 +19,15 @@ export const FilterWrapper = styled.div`
     padding: 10px 0;
     font-size: 18px;
     line-height: 24px;
-    
+
     li {
       cursor: pointer;
       transition: 0.3s;
-      
+    }
+
+    a {
+      color: #000000;
+
       &:hover {
         color: #E4002B;
       }
