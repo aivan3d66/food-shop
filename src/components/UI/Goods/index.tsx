@@ -4,10 +4,11 @@ import GoodCard from './GoodCard'
 
 export default () => {
     const { goods, deliveryFilter } = useAppSelector((state) => state.testReducer)
+    let copyGoods = goods
 
-    const burgersCategory = goods.filter(f => f.type === 'burger' && f.delivery === deliveryFilter)
-    const twistersCategory = goods.filter(f => f.type === 'twister' && f.delivery === deliveryFilter)
-    const stripsCategory = goods.filter(f => f.type === 'strips' && f.delivery === deliveryFilter)
+    if (deliveryFilter) {
+        copyGoods = goods.filter(f => f.delivery)
+    }
 
     return (
         <Goods>
@@ -16,7 +17,7 @@ export default () => {
                     <h2>Burgers</h2>
                     <ul>
                         {
-                            burgersCategory.map((m) => {
+                            copyGoods.filter(f => f.type === 'burger').map((m) => {
                                 return <GoodCard
                                     key={m.id}
                                     name={m.name}
@@ -33,7 +34,7 @@ export default () => {
                 <h2>Twisters</h2>
                 <ul>
                     {
-                        twistersCategory.map((m) => {
+                        copyGoods.filter(f => f.type === 'twister').map((m) => {
                             return <GoodCard
                                 key={m.id}
                                 name={m.name}
@@ -50,7 +51,7 @@ export default () => {
                     <h2>Chicken</h2>
                     <ul>
                         {
-                            stripsCategory.map((m) => {
+                            copyGoods.filter(f => f.type === 'strips').map((m) => {
                                 return <GoodCard
                                     key={m.id}
                                     name={m.name}
