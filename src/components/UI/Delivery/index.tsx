@@ -6,7 +6,7 @@ import { useActions } from '../../../utils/helpers'
 import { testActions } from '../../../state/slices/testSlice'
 
 export default () => {
-    const [deliveryState, setDeliveryState] = useState<boolean>(true)
+    const [deliveryState, setDeliveryState] = useState<boolean>(false)
     const { changeDeliveryToggle } = useActions({ ...testActions })
 
     const setDeliveryHandler = () => {
