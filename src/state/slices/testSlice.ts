@@ -24,7 +24,7 @@ const testSlice = createSlice({
     name: 'shop-action',
     initialState: {
         filter: 'burger',
-        deliveryFilter: true,
+        deliveryFilter: false,
         goods: [
             {
                 id: '1',
