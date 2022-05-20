@@ -42,7 +42,7 @@ export const CardFlag = styled.div`
   font-size: 15px;
   line-height: 18px;
   border-radius: 50%;
-  background-color: #000000;
+  background-color: ${props => props.red};
 `
 
 export const CardControl = styled.div`
