@@ -12,7 +12,8 @@ export default () => {
                 <ul>
                     {
                         filters.map((m, i: number) => {
-                            return <li key={i}>{m}</li>
+                            const scrollId = `#${m}Control`
+                            return <li key={i}><a href={scrollId}>{m}</a></li>
                         })
                     }
                 </ul>
