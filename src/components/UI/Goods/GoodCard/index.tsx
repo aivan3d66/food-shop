@@ -11,11 +11,11 @@ type GoodCardPropsType = {
 }
 
 export default ({ name, image, price, popularity }: GoodCardPropsType) => {
-    const red = popularity === 'hit' ? theme.colors.red : theme.colors.black
+    const red = popularity === 'Hit' ? theme.colors.red : theme.colors.black
 
     return (
         <GoodCard>
-            {popularity !== 'def' ? <CardFlag red={red}>{popularity}</CardFlag> : ''}
+            {popularity !== 'Def' ? <CardFlag red={red}>{popularity}</CardFlag> : ''}
 
             <CardControl>
                 <img src={image} alt='good image' />
