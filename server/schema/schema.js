@@ -17,8 +17,7 @@ const CategoryType = new GraphQLObjectType({
     fields: () => ({
         id: { type: GraphQLID },
         name: { type: new GraphQLNonNull(GraphQLString) },
-        products: { type: new GraphQLNonNull(GraphQLList(GraphQLInt))},
-
+        products: { type: new GraphQLList(GraphQLInt) },
     }),
 })
 
@@ -27,7 +26,7 @@ const ProductType = new GraphQLObjectType({
     fields: () => ({
         id: { type: GraphQLID },
         name: { type: new GraphQLNonNull(GraphQLString) },
-        popularity: { type: new GraphQLNonNull(GraphQLList(GraphQLString))},
+        popularity: { type: new GraphQLNonNull(GraphQLString) },
         image: { type: new GraphQLNonNull(GraphQLString) },
         price: { type: new GraphQLNonNull(GraphQLInt) },
         type: { type: new GraphQLNonNull(GraphQLString) },
@@ -56,14 +55,14 @@ const Query = new GraphQLObjectType({
             type: new GraphQLList(CategoryType),
             args: { name: { type: GraphQLString } },
             resolve(parent, { name }) {
-                return Categories.find({ name: { $regex: name, $options: 'i' } })
+                return Categories.find()
             },
         },
         products: {
             type: new GraphQLList(ProductType),
             args: { name: { type: GraphQLString } },
             resolve(parent, { name }) {
-                return Products.find({ name: { $regex: name, $options: 'i' } })
+                return Products.find()
             },
         },
     },
