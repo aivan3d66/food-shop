@@ -1,8 +1,8 @@
 import { gql } from 'apollo-boost'
 
 export const productsQuery = gql`
-  query productsQuery($name: String) {
-    products(name: $name) {
+  query productsQuery {
+    products {
         id
         name
         popularity
