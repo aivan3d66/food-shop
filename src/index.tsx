@@ -15,13 +15,14 @@ const root = ReactDOM.createRoot(
 )
 
 const link = new HttpLink({
-    uri: 'https://git.heroku.com/food-shop-back.git/graphql',
-    headers: {
-        'Access-Control-Allow-Origin': '*',
-    },
-    fetchOptions: {
-        mode: 'no-cors',
-    },
+    uri: 'http://localhost:3000/graphql',
+    // uri: 'https://git.heroku.com/food-shop-back.git/graphql',
+    // headers: {
+    //     'Access-Control-Allow-Origin': '*',
+    // },
+    // fetchOptions: {
+    //     mode: 'no-cors',
+    // },
 });
 
 
@@ -56,6 +57,7 @@ const client: any = new ApolloClient({
             },
         },
     }),
+    credentials: 'include',
 })
 
 root.render(
