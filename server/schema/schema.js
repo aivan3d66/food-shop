@@ -54,14 +54,14 @@ const Query = new GraphQLObjectType({
         categories: {
             type: new GraphQLList(CategoryType),
             args: { name: { type: GraphQLString } },
-            resolve(parent, { name }) {
+            resolve() {
                 return Categories.find()
             },
         },
         products: {
             type: new GraphQLList(ProductType),
             args: { name: { type: GraphQLString } },
-            resolve(parent, { name }) {
+            resolve() {
                 return Products.find()
             },
         },
