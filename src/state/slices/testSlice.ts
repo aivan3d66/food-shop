@@ -44,7 +44,11 @@ const testSlice = createSlice({
             state.products = action.payload.products
         },
     },
-    extraReducers: {},
+    // extraReducers: (builder => {
+    //     builder.addCase(addTodoListAC, (state, action: PayloadAction<{ products: Array<GoodType> }>) => {
+    //         state.products = action.payload.products
+    //     })
+    // }),
 })
 
 export const testReducer = testSlice.reducer
