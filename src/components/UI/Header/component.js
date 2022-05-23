@@ -10,10 +10,12 @@ export const Header = styled.div`
 export const HeaderTricolor = styled.div`
   position: absolute;
   top: 0;
-  left: 50%;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;
   width: 62px;
+  margin: 0 auto;
   
   span {
     width: 14px;
