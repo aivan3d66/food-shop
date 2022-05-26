@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 export type PopularityType = 'Hit' | 'New' | 'Def'
 export type FilterType = 'burger'
@@ -16,50 +16,39 @@ export type CategoryType = {
     name: string,
     products: Array<string>,
 }
+export type DeliveryType = 'all' | 'true' | 'false'
 
 type InitialStateType = {
     filter: string,
-    deliveryFilter: boolean,
+    deliveryFilter: DeliveryType,
     products: Array<GoodType>,
     status: string,
     basketPrice: number,
     categories: Array<CategoryType>
 }
 
-// export const getProducts = createAsyncThunk(
-//     'app/get-products',
-//     async () => {
-//         return await api.endpoints.productsQuery
-//     }
-// )
-
 const testSlice = createSlice({
     name: 'shop-action',
     initialState: {
         filter: 'burger',
-        deliveryFilter: false,
+        deliveryFilter: 'all',
         products: [],
         status: 'App is ready',
         basketPrice: 0,
         categories: [],
     } as InitialStateType,
     reducers: {
-        changeDeliveryToggle: (state, action: PayloadAction<{ deliveryFilter: boolean }>) => {
+        changeDeliveryToggle: (state, action: PayloadAction<{ deliveryFilter: DeliveryType }>) => {
             state.deliveryFilter = action.payload.deliveryFilter
         },
         getProducts: (state, action: PayloadAction<{ products: Array<GoodType> }>) => {
             state.products = action.payload.products
         },
+        filteredProducts: (state, action: PayloadAction<{ value: boolean}>) => {
+            state.products = state.products.filter(f => f.delivery === action.payload.value)
+        },
     },
-    // extraReducers: (builder => {
-    //     builder.addCase(getProducts.fulfilled, (state, action: PayloadAction<{ products: Array<GoodType> }>) => {
-    //         state.products = action.payload.products
-    //     })
-    // }),
 })
 
 export const testReducer = testSlice.reducer
 export const testActions = testSlice.actions
-// export const appThunks = {
-//     getProducts
-// }
