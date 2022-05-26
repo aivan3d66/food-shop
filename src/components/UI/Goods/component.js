@@ -18,13 +18,13 @@ export const GoodsCategory = styled.div`
   min-height: 100vh;
   margin: 0 auto;
   font-size: 16px;
-  
+
   h2 {
     font-size: 32px;
     font-weight: normal;
     line-height: 40px;
   }
-  
+
   ul {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -33,4 +33,11 @@ export const GoodsCategory = styled.div`
     font-size: 24px;
     line-height: 32px;
   }
+`
+
+export const Error = styled.h1`
+  max-width: 900px;
+  margin: 100px auto;
+  text-align: center;
+  color: #E4002B;
 `
