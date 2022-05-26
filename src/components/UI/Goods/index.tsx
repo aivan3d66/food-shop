@@ -1,4 +1,4 @@
-import { Goods, GoodsWrapper, GoodsCategory, Error } from './component'
+import { Products, ProductsWrapper, ProductsCategory, Error } from './component'
 import { useActions, useAppSelector } from '../../../utils/helpers'
 import GoodCard from './GoodCard'
 import { GoodType, testActions } from '../../../state/slices/testSlice'
@@ -7,36 +7,45 @@ import Preloader from '../Preloader'
 import { client } from '../../../index'
 import { productsQuery } from './queries'
 
+type ProductsQueryResponseType = {
+    data: {
+        products: Array<GoodType>
+    }
+}
+
 export default () => {
     const { getProducts } = useActions({ ...testActions })
     const { deliveryFilter, products } = useAppSelector((state) => state.testReducer)
-    const [appError, setAppError] = useState<string>('kek')
+    const [appError, setAppError] = useState<string>('')
 
     useEffect(() => {
         client.query({ query: productsQuery })
-            .then((res: any) => {
+            .then((res: ProductsQueryResponseType) => {
                 getProducts({ products: res.data?.products ?? [] })
             })
             .catch((error: any) => {
                 setAppError(error.message)
             })
+    }, [])
 
-    }, [getProducts])
+    let filterProducts: Array<GoodType> = products
 
-    let copyGoods: Array<GoodType> = products
+    if (deliveryFilter === 'all') {
+        filterProducts.map((f: GoodType) => f)
+    }
 
-    if (deliveryFilter) {
-        copyGoods.filter((f: GoodType) => f.delivery)
+    if (deliveryFilter === 'true') {
+        filterProducts.filter((f: GoodType) => f.delivery === true)
     }
 
     return (
-        <Goods>
+        <Products>
             {
                 appError
                     ? <Error>Houston, we have a problem! Perhaps the problem with this: <span>{appError}</span></Error>
                     : <>
-                        <GoodsWrapper>
-                            <GoodsCategory id='BurgersControl'>
+                        <ProductsWrapper>
+                            <ProductsCategory id='BurgersControl'>
                                 <h2>Burgers</h2>
                                 {
                                     products.length === 0
@@ -44,7 +53,7 @@ export default () => {
                                         : <>
                                             <ul>
                                                 {
-                                                    copyGoods.filter((f: any) => f.type === 'burger').map((m: any) => {
+                                                    filterProducts.filter((f: any) => f.type === 'burger').map((m: any) => {
                                                         return <GoodCard
                                                             key={m.id}
                                                             name={m.name}
@@ -57,9 +66,9 @@ export default () => {
                                             </ul>
                                         </>
                                 }
-                            </GoodsCategory>
-                        </GoodsWrapper>
-                        <GoodsCategory id='TwistersControl'>
+                            </ProductsCategory>
+                        </ProductsWrapper>
+                        <ProductsCategory id='TwistersControl'>
                             <h2>Twisters</h2>
                             {
                                 products.length === 0
@@ -67,7 +76,7 @@ export default () => {
                                     : <>
                                         <ul>
                                             {
-                                                copyGoods.filter(f => f.type === 'twister').map((m) => {
+                                                filterProducts.filter(f => f.type === 'twister').map((m) => {
                                                     return <GoodCard
                                                         key={m.id}
                                                         name={m.name}
@@ -80,9 +89,9 @@ export default () => {
                                         </ul>
                                     </>
                             }
-                        </GoodsCategory>
-                        <GoodsWrapper>
-                            <GoodsCategory id='ChickenControl'>
+                        </ProductsCategory>
+                        <ProductsWrapper>
+                            <ProductsCategory id='ChickenControl'>
                                 <h2>Chicken</h2>
                                 {
                                     products.length === 0
@@ -90,7 +99,7 @@ export default () => {
                                         : <>
                                             <ul>
                                                 {
-                                                    copyGoods.filter(f => f.type === 'strips').map((m) => {
+                                                    filterProducts.filter(f => f.type === 'strips').map((m) => {
                                                         return <GoodCard
                                                             key={m.id}
                                                             name={m.name}
@@ -103,10 +112,10 @@ export default () => {
                                             </ul>
                                         </>
                                 }
-                            </GoodsCategory>
-                        </GoodsWrapper>
+                            </ProductsCategory>
+                        </ProductsWrapper>
                     </>
             }
-        </Goods>
+        </Products>
     )
 }
