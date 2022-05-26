@@ -16,48 +16,12 @@ const root = ReactDOM.createRoot(
 
 const link = new HttpLink({
     uri: 'http://localhost:3000/graphql',
-    // uri: 'https://git.heroku.com/food-shop-back.git/graphql',
-    // headers: {
-    //     'Access-Control-Allow-Origin': '*',
-    // },
-    // fetchOptions: {
-    //     mode: 'no-cors',
-    // },
 });
 
 
-const client: any = new ApolloClient({
+export const client: any = new ApolloClient({
     link,
-    cache: new InMemoryCache({
-        typePolicies: {
-            Query: {
-                fields: {
-                    product: {
-                        merge(existing, incoming) {
-                            return incoming
-                        },
-                    },
-                    products: {
-                        merge(existing, incoming) {
-                            return incoming
-                        },
-                    },
-                    category: {
-                        merge(existing, incoming) {
-                            return incoming
-                        },
-                    },
-                    categories: {
-                        merge(existing, incoming) {
-                            return incoming
-                        },
-                    },
-
-                },
-            },
-        },
-    }),
-    credentials: 'include',
+    cache: new InMemoryCache(),
 })
 
 root.render(

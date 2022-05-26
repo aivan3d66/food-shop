@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 export type PopularityType = 'Hit' | 'New' | 'Def'
 export type FilterType = 'burger'
@@ -26,6 +26,13 @@ type InitialStateType = {
     categories: Array<CategoryType>
 }
 
+// export const getProducts = createAsyncThunk(
+//     'app/get-products',
+//     async () => {
+//         return await api.endpoints.productsQuery
+//     }
+// )
+
 const testSlice = createSlice({
     name: 'shop-action',
     initialState: {
@@ -45,7 +52,7 @@ const testSlice = createSlice({
         },
     },
     // extraReducers: (builder => {
-    //     builder.addCase(addTodoListAC, (state, action: PayloadAction<{ products: Array<GoodType> }>) => {
+    //     builder.addCase(getProducts.fulfilled, (state, action: PayloadAction<{ products: Array<GoodType> }>) => {
     //         state.products = action.payload.products
     //     })
     // }),
@@ -53,3 +60,6 @@ const testSlice = createSlice({
 
 export const testReducer = testSlice.reducer
 export const testActions = testSlice.actions
+// export const appThunks = {
+//     getProducts
+// }
