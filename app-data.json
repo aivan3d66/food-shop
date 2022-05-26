@@ -1,0 +1,156 @@
+{
+  "data": {
+    "products": [
+      {
+        "id": "6289f5de6518839d2d097838",
+        "name": "Burger",
+        "popularity": "New",
+        "image": "https://i.ibb.co/qyfx5wv/burger.png",
+        "price": 144,
+        "type": "burger",
+        "delivery": true,
+        "__typename": "Product"
+      },
+      {
+        "id": "6289f6066518839d2d097839",
+        "name": "Burger",
+        "popularity": "Hit",
+        "image": "https://i.ibb.co/qyfx5wv/burger.png",
+        "price": 140,
+        "type": "burger",
+        "delivery": false,
+        "__typename": "Product"
+      },
+      {
+        "id": "6289f60d6518839d2d09783a",
+        "name": "Burger",
+        "popularity": "Def",
+        "image": "https://i.ibb.co/qyfx5wv/burger.png",
+        "price": 144,
+        "type": "burger",
+        "delivery": false,
+        "__typename": "Product"
+      },
+      {
+        "id": "6289f6126518839d2d09783b",
+        "name": "Burger",
+        "popularity": "Def",
+        "image": "https://i.ibb.co/qyfx5wv/burger.png",
+        "price": 132,
+        "type": "burger",
+        "delivery": false,
+        "__typename": "Product"
+      },
+      {
+        "id": "6289f6186518839d2d09783c",
+        "name": "Burger",
+        "popularity": "Def",
+        "image": "https://i.ibb.co/qyfx5wv/burger.png",
+        "price": 140,
+        "type": "burger",
+        "delivery": true,
+        "__typename": "Product"
+      },
+      {
+        "id": "6289f61c6518839d2d09783d",
+        "name": "Burger",
+        "popularity": "New",
+        "image": "https://i.ibb.co/qyfx5wv/burger.png",
+        "price": 150,
+        "type": "burger",
+        "delivery": true,
+        "__typename": "Product"
+      },
+      {
+        "id": "6289f6596518839d2d09783e",
+        "name": "Burger",
+        "popularity": "Hit",
+        "image": "https://i.ibb.co/qyfx5wv/burger.png",
+        "price": 142,
+        "type": "burger",
+        "delivery": false,
+        "__typename": "Product"
+      },
+      {
+        "id": "6289f6626518839d2d09783f",
+        "name": "Twister",
+        "popularity": "Hit",
+        "image": "https://i.ibb.co/jzgC8fZ/twister.png",
+        "price": 111,
+        "type": "twister",
+        "delivery": false,
+        "__typename": "Product"
+      },
+      {
+        "id": "6289f6966518839d2d097840",
+        "name": "Twister",
+        "popularity": "Def",
+        "image": "https://i.ibb.co/jzgC8fZ/twister.png",
+        "price": 144,
+        "type": "twister",
+        "delivery": true,
+        "__typename": "Product"
+      },
+      {
+        "id": "6289f69d6518839d2d097841",
+        "name": "Twister",
+        "popularity": "New",
+        "image": "https://i.ibb.co/jzgC8fZ/twister.png",
+        "price": 144,
+        "type": "twister",
+        "delivery": true,
+        "__typename": "Product"
+      },
+      {
+        "id": "6289f6a46518839d2d097842",
+        "name": "Twister",
+        "popularity": "def",
+        "image": "https://i.ibb.co/jzgC8fZ/twister.png",
+        "price": 137,
+        "type": "twister",
+        "delivery": false,
+        "__typename": "Product"
+      },
+      {
+        "id": "6289f6b66518839d2d097843",
+        "name": "Strips",
+        "popularity": "Hit",
+        "image": "https://i.ibb.co/F7bB8Cn/strips.png",
+        "price": 141,
+        "type": "strips",
+        "delivery": false,
+        "__typename": "Product"
+      },
+      {
+        "id": "6289f7316518839d2d097844",
+        "name": "Strips",
+        "popularity": "New",
+        "image": "https://i.ibb.co/F7bB8Cn/strips.png",
+        "price": 146,
+        "type": "strips",
+        "delivery": true,
+        "__typename": "Product"
+      },
+      {
+        "id": "6289f7376518839d2d097845",
+        "name": "Strips",
+        "popularity": "Def",
+        "image": "https://i.ibb.co/F7bB8Cn/strips.png",
+        "price": 144,
+        "type": "strips",
+        "delivery": true,
+        "__typename": "Product"
+      },
+      {
+        "id": "6289f73e6518839d2d097846",
+        "name": "Strips",
+        "popularity": "Def",
+        "image": "https://i.ibb.co/F7bB8Cn/strips.png",
+        "price": 139,
+        "type": "strips",
+        "delivery": true,
+        "__typename": "Product"
+      }
+    ]
+  }
+}
