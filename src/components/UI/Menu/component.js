@@ -65,4 +65,8 @@ export const MenuLogo = styled.div`
   margin: auto;
   background-color: #cacaca;
   border-radius: 50%;
+  
+  img {
+    width: 100%;
+  }
 `
