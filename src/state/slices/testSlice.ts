@@ -6,7 +6,7 @@ const testSlice = createSlice({
         filter: 'burger',
         deliveryFilter: 'all',
         products: [],
-        status: 'App is ready',
+        status: '',
         basketPrice: 0,
         categories: [],
     } as InitialStateType,
