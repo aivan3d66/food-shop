@@ -41,6 +41,7 @@ export const DeliveryControls = styled.div`
 export const DeliveryBody = styled.div`
   display: flex;
   align-items: baseline;
+  padding: 20px 0;
   font-size: 32px;
   line-height: 40px;
   
