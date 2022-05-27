@@ -17,6 +17,9 @@ const testSlice = createSlice({
         getProducts: (state, action: PayloadAction<{ products: Array<GoodType> }>) => {
             state.products = action.payload.products
         },
+        getCategories: (state, action: PayloadAction<{ categories: Array<CategoryType> }>) => {
+            state.categories = action.payload.categories
+        },
         filteredProducts: (state, action: PayloadAction<{ products: Array<GoodType> }>) => {
             state.products = action.payload.products
         },
