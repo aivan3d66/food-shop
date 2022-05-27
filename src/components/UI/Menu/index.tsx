@@ -1,5 +1,5 @@
 import { Menu, MenuLogo, MenuTricolor, MenuWrapper } from './component'
-import { useId } from 'react'
+import MenuTab from './MenuTab'
 
 export default () => {
     const data: Array<string> = ['subsection', 'subsection', 'subsection', 'subsection', 'subsection', 'subsection', 'subsection']
@@ -12,39 +12,11 @@ export default () => {
                     <span></span>
                     <span></span>
                 </MenuTricolor>
-                <div>
-                    <h4>Section 1</h4>
-                    <ul>
-                        {
-                            data.map(m => <li key={useId()}>{m}</li>)
-                        }
-                    </ul>
-                </div>
-                <div>
-                    <h4>Section 2</h4>
-                    <ul>
-                        {
-                            data.map(m => <li key={useId()}>{m}</li>)
-                        }
-                    </ul>
-                </div>
+                <MenuTab title={'Section 1'} data={data} />
+                <MenuTab title={'Section 2'} data={data} />
                 <MenuLogo />
-                <div>
-                    <h4>Section 3</h4>
-                    <ul>
-                        {
-                            data.map(m => <li key={useId()}>{m}</li>)
-                        }
-                    </ul>
-                </div>
-                <div>
-                    <h4>Section 4</h4>
-                    <ul>
-                        {
-                            data.map(m => <li key={useId()}>{m}</li>)
-                        }
-                    </ul>
-                </div>
+                <MenuTab title={'Section 3'} data={data} />
+                <MenuTab title={'Section 4'} data={data} />
             </MenuWrapper>
         </Menu>
     )

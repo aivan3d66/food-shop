@@ -26,7 +26,7 @@ export const MenuTricolor = styled.div`
 
 export const MenuWrapper = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-template-rows: auto;
   grid-gap: 20px;
   max-width: 1248px;
@@ -35,6 +35,10 @@ export const MenuWrapper = styled.div`
   padding: 40px 0;
   font-size: 16px;
   line-height: 24px;
+  
+  @media (min-width: 1440px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
 
   div {
     margin: auto;
