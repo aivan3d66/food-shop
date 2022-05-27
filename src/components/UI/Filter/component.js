@@ -1,9 +1,13 @@
 import styled from 'styled-components'
 
 export const Filter = styled.div`
+  position: sticky;
+  top: 0;
+  z-index: 2;
   width: 100%;
   padding: 0;
   margin: 0;
+  background-color: #ffffff;
 `
 
 export const FilterWrapper = styled.div`
@@ -15,7 +19,7 @@ export const FilterWrapper = styled.div`
   ul {
     display: flex;
     justify-content: space-between;
-    margin: 40px 0 0 0;
+    margin: 0;
     padding: 10px 0;
     font-size: 18px;
     line-height: 24px;
