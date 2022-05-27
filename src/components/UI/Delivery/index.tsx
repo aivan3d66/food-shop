@@ -1,23 +1,48 @@
 import { Delivery, DeliveryBody, DeliveryControls, DeliveryHeader, DeliveryWrapper } from './component'
 import Button from '../Button/Button'
 import InputText from '../InputText/InputText'
-import { useState } from 'react'
-import { useActions } from '../../../utils/helpers'
-import { testActions } from '../../../state/slices/testSlice'
+import { useEffect, useState } from 'react'
+import { useActions, useAppSelector } from '../../../utils/helpers'
+import { GoodType, testActions } from '../../../state/slices/testSlice'
+import { client } from '../../../index'
+import { productsQuery } from '../Goods/queries'
+
+type ProductsQueryResponseType = {
+    data: {
+        products: Array<GoodType>
+    }
+}
 
 export default () => {
     const [deliveryState, setDeliveryState] = useState<boolean>(false)
+    const { getProducts, filteredProducts, setAppError } = useActions({ ...testActions })
+    const { products } = useAppSelector((state) => state.testReducer)
     const { changeDeliveryToggle } = useActions({ ...testActions })
+
+    const getProductsQuery = () => {
+        client.query({ query: productsQuery })
+            .then((res: ProductsQueryResponseType) => {
+                getProducts({ products: res.data?.products ?? [] })
+            })
+            .catch((error: any) => {
+                setAppError(error.message)
+            })
+    }
+
+    useEffect(() => {
+        getProductsQuery()
+    }, [])
 
     const setDeliveryHandler = () => {
         setDeliveryState(true)
         changeDeliveryToggle({ deliveryFilter: 'true' })
-        // filteredProducts({ value: true })
+        filteredProducts({ products: products.filter((f: GoodType) => f.delivery) })
     }
     const setPickUpHandler = () => {
         setDeliveryState(false)
         changeDeliveryToggle({ deliveryFilter: 'all' })
-        // filteredProducts({ value: false })
+        getProductsQuery()
+        filteredProducts({ products: products })
     }
 
     return (

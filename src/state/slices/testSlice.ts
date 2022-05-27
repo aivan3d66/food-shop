@@ -44,8 +44,11 @@ const testSlice = createSlice({
         getProducts: (state, action: PayloadAction<{ products: Array<GoodType> }>) => {
             state.products = action.payload.products
         },
-        filteredProducts: (state, action: PayloadAction<{ value: boolean}>) => {
-            state.products = state.products.filter(f => f.delivery === action.payload.value)
+        filteredProducts: (state, action: PayloadAction<{ products: Array<GoodType> }>) => {
+            state.products = action.payload.products
+        },
+        setAppError: (state, action: PayloadAction<{ status: string }>) => {
+            state.status = action.payload.status
         },
     },
 })
