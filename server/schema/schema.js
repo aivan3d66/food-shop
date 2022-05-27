@@ -17,7 +17,7 @@ const CategoryType = new GraphQLObjectType({
     fields: () => ({
         id: { type: GraphQLID },
         name: { type: new GraphQLNonNull(GraphQLString) },
-        products: { type: new GraphQLList(GraphQLInt) },
+        products: { type: new GraphQLList(GraphQLString) },
     }),
 })
 
