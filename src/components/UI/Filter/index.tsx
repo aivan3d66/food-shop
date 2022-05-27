@@ -39,7 +39,7 @@ export default () => {
                         : <ul>
                             {
                                 categories.map((m, i: number) => {
-                                    const scrollId = `#${m}Control`
+                                    const scrollId = `#${m.name}Control`
                                     return <li key={i}><a href={scrollId}>{m.name}</a></li>
                                 })
                             }
