@@ -15,9 +15,8 @@ const root = ReactDOM.createRoot(
 )
 
 const link = new HttpLink({
-    uri: 'http://localhost:3000/graphql',
+    uri: 'https://food-shop-back.herokuapp.com/graphql'
 });
-
 
 export const client: any = new ApolloClient({
     link,
