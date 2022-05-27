@@ -38,12 +38,24 @@ export const ProductsCategory = styled.div`
 
   ul {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: auto;
     grid-gap: 20px;
     width: 100%;
     font-size: 24px;
     line-height: 32px;
+    
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media (min-width: 1440px) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
   }
 `
 
