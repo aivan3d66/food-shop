@@ -13,6 +13,16 @@ export const ProductsWrapper = styled.div`
   background-color: #F7F6F5;
 `
 
+export const ProductsWrapperStyled = styled.div`
+  width: 100%;
+  padding: 20px 0;
+  background-color: #ffffff;
+  
+  li:hover {
+    background-color: #F7F6F5;
+  }
+`
+
 export const ProductsCategory = styled.div`
   max-width: 1248px;
   min-height: 100vh;
