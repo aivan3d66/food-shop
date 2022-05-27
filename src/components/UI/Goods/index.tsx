@@ -1,4 +1,4 @@
-import { Products, ProductsWrapper, ProductsCategory, Error } from './component'
+import { Products, ProductsWrapper, ProductsCategory, Error, ProductsWrapperStyled } from './component'
 import { useAppSelector } from '../../../utils/helpers'
 import GoodCard from './GoodCard'
 import Preloader from '../Preloader'
@@ -12,8 +12,8 @@ export default () => {
                 status
                     ? <Error>Houston, we have a problem! Perhaps the problem with this: <span>{status}</span></Error>
                     : <>
-                        <ProductsWrapper>
-                            <ProductsCategory id='BurgersControl'>
+                        <ProductsWrapper id='BurgersControl'>
+                            <ProductsCategory>
                                 <h2>Burgers</h2>
                                 {
                                     products.length === 0
@@ -36,30 +36,32 @@ export default () => {
                                 }
                             </ProductsCategory>
                         </ProductsWrapper>
-                        <ProductsCategory id='TwistersControl'>
-                            <h2>Twisters</h2>
-                            {
-                                products.length === 0
-                                    ? <Preloader />
-                                    : <>
-                                        <ul>
-                                            {
-                                                products.filter(f => f.type === 'twister').map((m) => {
-                                                    return <GoodCard
-                                                        key={m.id}
-                                                        name={m.name}
-                                                        image={m.image}
-                                                        popularity={m.popularity}
-                                                        price={m.price}
-                                                    />
-                                                })
-                                            }
-                                        </ul>
-                                    </>
-                            }
-                        </ProductsCategory>
-                        <ProductsWrapper>
-                            <ProductsCategory id='ChickenControl'>
+                        <ProductsWrapperStyled id='TwistersControl'>
+                            <ProductsCategory>
+                                <h2>Twisters</h2>
+                                {
+                                    products.length === 0
+                                        ? <Preloader />
+                                        : <>
+                                            <ul>
+                                                {
+                                                    products.filter(f => f.type === 'twister').map((m) => {
+                                                        return <GoodCard
+                                                            key={m.id}
+                                                            name={m.name}
+                                                            image={m.image}
+                                                            popularity={m.popularity}
+                                                            price={m.price}
+                                                        />
+                                                    })
+                                                }
+                                            </ul>
+                                        </>
+                                }
+                            </ProductsCategory>
+                        </ProductsWrapperStyled>
+                        <ProductsWrapper id='ChickenControl'>
+                            <ProductsCategory>
                                 <h2>Chicken</h2>
                                 {
                                     products.length === 0
