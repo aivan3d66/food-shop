@@ -14,14 +14,29 @@ export const DeliveryWrapper = styled.div`
 
 export const DeliveryHeader = styled.div`
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   max-height: 100px;
   
   h1 {
     font-weight: 700;
-    font-size: 64px;
-    line-height: 72px;
+    font-size: 34px;
+    line-height: 42px;
+
+    @media (min-width: 768px) {
+      font-size: 44px;
+      line-height: 52px;
+    }
+
+    @media (min-width: 1120px) {
+      font-size: 64px;
+      line-height: 72px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    flex-direction: row;
   }
 `
 
