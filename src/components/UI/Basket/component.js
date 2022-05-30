@@ -30,6 +30,10 @@ export const BasketProducts = styled.div`
       font-weight: 400;
       font-size: 24px;
       line-height: 32px;
+
+      span {
+        color: #E4002B;
+      }
     }
 
     img {
@@ -52,6 +56,6 @@ export const BasketPrice = styled.div`
   }
 
   button {
-    margin: 40px 0;
+    margin: 40px 40px 40px 0;
   }
 `
