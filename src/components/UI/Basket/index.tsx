@@ -2,6 +2,8 @@ import { Basket, BasketPrice, BasketProducts, BasketWrapper } from './component'
 import { useActions, useAppSelector } from '../../../utils/helpers'
 import Button from '../Button/Button'
 import { shopPageActions } from '../../../state/slices/shopPageSlice'
+import { NavLink } from 'react-router-dom'
+import { RouteNames } from '../../../routes/routes'
 
 export default () => {
     const { basketProducts } = useAppSelector((state) => state.shopPageReducer)
@@ -26,8 +28,8 @@ export default () => {
 
                                 return <li key={p.id}>
                                     <img src={p.image} />
-                                    <p>Name: {p.name}</p>
-                                    <p>Price: {p.price}</p>
+                                    <p>{p.name}</p>
+                                    <p>Price: <span>{p.price} &#8381;</span></p>
                                     <Button name={'Delete'} deliveryState={true} onClick={onDeleteHandler} />
                                 </li>
                             })
@@ -36,7 +38,12 @@ export default () => {
                 </BasketProducts>
                 <BasketPrice>
                     <span>Total price: {price}&#8381;</span>
-                    <Button name={'Buy'} deliveryState={basketProducts.length > 0} onClick={() => buyProducts({ products: [] })} />
+                    <div>
+                        <NavLink to={RouteNames.START_PAGE}>
+                            <Button name={'Back'} deliveryState={false}/>
+                        </NavLink>
+                        <Button name={'Buy'} deliveryState={basketProducts.length > 0} onClick={() => buyProducts({ products: [] })} />
+                    </div>
                 </BasketPrice>
             </BasketWrapper>
         </Basket>
