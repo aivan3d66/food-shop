@@ -6,8 +6,8 @@ const shopPage = createSlice({
         filter: 'burger',
         deliveryFilter: 'all',
         products: [],
+        basketProducts: [],
         status: '',
-        basketPrice: 0,
         categories: [],
     } as InitialStateType,
     reducers: {
@@ -25,6 +25,16 @@ const shopPage = createSlice({
         },
         setAppError: (state, action: PayloadAction<{ status: string }>) => {
             state.status = action.payload.status
+        },
+        addToBasket: (state, action: PayloadAction<{ productId: string }>) => {
+            state.basketProducts.push(...state.products.filter(f => f.id === action.payload.productId))
+        },
+        deleteFromBasket: (state, action: PayloadAction<{ productId: string }>) => {
+            state.basketProducts.findIndex(tl => tl.id === action.payload.productId) > -1 && state.basketProducts.splice(state.basketProducts.findIndex(tl => tl.id === action.payload.productId), 1);
+        },
+        buyProducts: (state, action: PayloadAction<{ products: Array<GoodType> }>) => {
+            console.log('You buy: ' + state.basketProducts)
+            state.basketProducts = action.payload.products
         },
     },
 })
@@ -54,7 +64,7 @@ type InitialStateType = {
     filter: string,
     deliveryFilter: DeliveryType,
     products: Array<GoodType>,
+    basketProducts: Array<GoodType>,
     status: string,
-    basketPrice: number,
     categories: Array<CategoryType>
 }
