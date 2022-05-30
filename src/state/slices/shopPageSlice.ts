@@ -33,7 +33,7 @@ const shopPage = createSlice({
             state.basketProducts.findIndex(tl => tl.id === action.payload.productId) > -1 && state.basketProducts.splice(state.basketProducts.findIndex(tl => tl.id === action.payload.productId), 1);
         },
         buyProducts: (state, action: PayloadAction<{ products: Array<GoodType> }>) => {
-            console.log('You buy: ' + state.basketProducts)
+            console.log('You buy: ' + JSON.stringify(state.basketProducts))
             state.basketProducts = action.payload.products
         },
     },
