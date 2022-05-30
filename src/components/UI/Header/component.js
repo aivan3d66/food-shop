@@ -38,7 +38,7 @@ export const HeaderMenu = styled.div`
   font-size: 20px;
 `
 
-export const Basket = styled.div`
+export const BasketButton = styled.button`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -48,6 +48,7 @@ export const Basket = styled.div`
   font-size: 20px;
   color: #ffffff;
   border-radius: 20px;
+  border: 1px solid transparent;
   background-color: #E4002B;
   cursor: pointer;
   
