@@ -28,6 +28,7 @@ export default () => {
                                                             image={m.image}
                                                             popularity={m.popularity}
                                                             price={m.price}
+                                                            id={m.id}
                                                         />
                                                     })
                                                 }
@@ -48,6 +49,7 @@ export default () => {
                                                     products.filter(f => f.type === 'twister').map((m) => {
                                                         return <GoodCard
                                                             key={m.id}
+                                                            id={m.id}
                                                             name={m.name}
                                                             image={m.image}
                                                             popularity={m.popularity}
@@ -72,6 +74,7 @@ export default () => {
                                                     products.filter(f => f.type === 'strips').map((m) => {
                                                         return <GoodCard
                                                             key={m.id}
+                                                            id={m.id}
                                                             name={m.name}
                                                             image={m.image}
                                                             popularity={m.popularity}
