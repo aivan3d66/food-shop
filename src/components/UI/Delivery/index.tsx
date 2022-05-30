@@ -3,7 +3,7 @@ import Button from '../Button/Button'
 import InputText from '../InputText/InputText'
 import { useEffect, useState } from 'react'
 import { useActions, useAppSelector } from '../../../utils/helpers'
-import { GoodType, shopPageActions, shopPageReducer } from '../../../state/slices/testSlice'
+import { GoodType, shopPageActions, shopPageReducer } from '../../../state/slices/shopPageSlice'
 import { client } from '../../../index'
 import { productsQuery } from '../Goods/queries'
 
@@ -15,9 +15,8 @@ type ProductsQueryResponseType = {
 
 export default () => {
     const [deliveryState, setDeliveryState] = useState<boolean>(false)
-    const { getProducts, filteredProducts, setAppError } = useActions({ ...shopPageActions })
+    const { getProducts, filteredProducts, setAppError, changeDeliveryToggle } = useActions({ ...shopPageActions })
     const { products } = useAppSelector((state) => state.shopPageReducer)
-    const { changeDeliveryToggle } = useActions({ ...shopPageActions })
 
     const getProductsQuery = () => {
         client.query({ query: productsQuery })
