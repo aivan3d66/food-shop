@@ -4,7 +4,7 @@ import GoodCard from './GoodCard'
 import Preloader from '../Preloader'
 
 export default () => {
-    const { products, status } = useAppSelector((state) => state.testReducer)
+    const { products, status } = useAppSelector((state) => state.shopPageReducer)
 
     return (
         <Products>

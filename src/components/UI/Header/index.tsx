@@ -4,7 +4,7 @@ import { useAppSelector } from '../../../utils/helpers'
 import basket from './../../../assets/images/basket.svg'
 
 export default () => {
-    const { basketPrice } = useAppSelector((state) => state.testReducer)
+    const { basketPrice } = useAppSelector((state) => state.shopPageReducer)
 
     return (
         <Header>

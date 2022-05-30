@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { testReducer } from './slices/testSlice'
+import { shopPageReducer } from './slices/testSlice'
 
 export const store = configureStore({
     reducer: {
-        testReducer: testReducer,
+        shopPageReducer,
     },
 })
 

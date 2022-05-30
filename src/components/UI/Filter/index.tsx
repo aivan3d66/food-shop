@@ -2,14 +2,14 @@ import { Filter, FilterWrapper } from './component'
 import { useActions, useAppSelector } from '../../../utils/helpers'
 import { client } from '../../../index'
 import { useEffect } from 'react'
-import { CategoryType, testActions } from '../../../state/slices/testSlice'
+import { CategoryType, shopPageActions } from '../../../state/slices/testSlice'
 import Preloader from '../Preloader'
 import { categoriesQuery } from './queries'
 import { SwiperSlide, Swiper } from 'swiper/react'
 import { A11y } from 'swiper'
 
-import 'swiper/css';
-import 'swiper/css/navigation';
+import 'swiper/css'
+import 'swiper/css/navigation'
 
 type CategoriesQueryResponseType = {
     data: {
@@ -18,8 +18,8 @@ type CategoriesQueryResponseType = {
 }
 
 export default () => {
-    const { categories } = useAppSelector((state) => state.testReducer)
-    const { getCategories, setAppError } = useActions({ ...testActions })
+    const { categories } = useAppSelector((state) => state.shopPageReducer)
+    const { getCategories, setAppError } = useActions({ ...shopPageActions })
 
     const getCategoriesQuery = () => {
         client.query({ query: categoriesQuery })
@@ -78,54 +78,9 @@ export default () => {
                                         )
                                     })
                                 }
-
-                                {/*<SwiperSlide>*/}
-                                {/*    <li key={1}><a href="#">firsfirstfirstfirstfirstfirstt</a></li>*/}
-                                {/*</SwiperSlide>*/}
-                                {/*<SwiperSlide>*/}
-                                {/*    <li key={2}><a href="#">secofirstfirstfirstfirstfirstfirstnd</a></li>*/}
-                                {/*</SwiperSlide>*/}
-                                {/*<SwiperSlide>*/}
-                                {/*    <li key={1}><a href="#">fifirstfirstfirstfirstfirstfirstfirstrst</a></li>*/}
-                                {/*</SwiperSlide>*/}
-                                {/*<SwiperSlide>*/}
-                                {/*    <li key={2}><a href="#">seconfirstfirstfirstfirstfirstfirstfirstd</a></li>*/}
-                                {/*</SwiperSlide>*/}
-                                {/*<SwiperSlide>*/}
-                                {/*    <li key={1}><a href="#">firfirstfirstfirstfirstfirstfirstfirstfirstst</a></li>*/}
-                                {/*</SwiperSlide>*/}
-                                {/*<SwiperSlide>*/}
-                                {/*    <li key={2}><a href="#">firstfirstfirstfirstfirstfirstfirstfirstfirst</a></li>*/}
-                                {/*</SwiperSlide>*/}
-                                {/*<SwiperSlide>*/}
-                                {/*    <li key={1}><a href="#">firstfirstfirstfirstfirstfirstfirstfirstfirst</a></li>*/}
-                                {/*</SwiperSlide>*/}
-                                {/*<SwiperSlide>*/}
-                                {/*    <li key={2}><a href="#">firstfirstfirstfirstfirstfirstfirstfirstfirst</a></li>*/}
-                                {/*</SwiperSlide>*/}
-                                {/*<SwiperSlide>*/}
-                                {/*    <li key={1}><a href="#">fifirstfirstfirstfirstfirstfirstfirstfirstfirstrst</a></li>*/}
-                                {/*</SwiperSlide>*/}
-                                {/*<SwiperSlide>*/}
-                                {/*    <li key={2}><a href="#">secfirstfirstfirstfirstfirstfirstfirstfirstfirstond</a></li>*/}
-                                {/*</SwiperSlide>*/}
-                                {/*<SwiperSlide>*/}
-                                {/*    <li key={1}><a href="#">fifirstfirstfirstfirstfirstfirstfirstfirstfirstrst</a></li>*/}
-                                {/*</SwiperSlide>*/}
-                                {/*<SwiperSlide>*/}
-                                {/*    <li key={2}><a href="#">secofirstfirstfirstfirstfirstfirstfirstfirstfirstnd</a></li>*/}
-                                {/*</SwiperSlide>*/}
-                                {/*<SwiperSlide>*/}
-                                {/*    <li key={1}><a href="#">firsfirstfirstfirstfirstfirstfirstfirstfirstfirstt</a></li>*/}
-                                {/*</SwiperSlide>*/}
-                                {/*<SwiperSlide>*/}
-                                {/*    <li key={2}><a href="#">secofirstfirstfirstfirstfirstfirstfirstfirstfirstnd</a></li>*/}
-                                {/*</SwiperSlide>*/}
-
                             </Swiper>
                         </ul>
                 }
-
             </FilterWrapper>
         </Filter>
     )

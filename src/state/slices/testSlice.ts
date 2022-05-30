@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-const testSlice = createSlice({
+const shopPage = createSlice({
     name: 'shop-action',
     initialState: {
         filter: 'burger',
@@ -29,8 +29,8 @@ const testSlice = createSlice({
     },
 })
 
-export const testReducer = testSlice.reducer
-export const testActions = testSlice.actions
+export const shopPageReducer = shopPage.reducer
+export const shopPageActions = shopPage.actions
 
 export type PopularityType = 'Hit' | 'New' | 'Def'
 export type FilterType = 'burger'
