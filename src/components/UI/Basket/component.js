@@ -5,7 +5,6 @@ export const Basket = styled.div`
   width: 100%;
   padding: 20px 0;
   margin: 0;
-  background-color: #F7F6F5;
 `
 
 export const BasketWrapper = styled.div`

@@ -36,7 +36,7 @@ export default () => {
                 </BasketProducts>
                 <BasketPrice>
                     <span>Total price: {price}&#8381;</span>
-                    <Button name={'Buy'} deliveryState={true} onClick={() => buyProducts({ products: [] })} />
+                    <Button name={'Buy'} deliveryState={basketProducts.length > 0} onClick={() => buyProducts({ products: [] })} />
                 </BasketPrice>
             </BasketWrapper>
         </Basket>
