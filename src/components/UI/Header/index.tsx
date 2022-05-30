@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom'
 import { RouteNames } from '../../../routes/routes'
 
 export default () => {
-    const { basketPrice } = useAppSelector((state) => state.shopPageReducer)
+    const { basketProducts } = useAppSelector((state) => state.shopPageReducer)
 
     return (
         <Header>
@@ -22,7 +22,7 @@ export default () => {
                 </HeaderMenu>
                 <NavLink to={RouteNames.BASKET_PAGE}>
                     <BasketButton>
-                        {basketPrice} &#8381;
+                        {basketProducts.length === 0 ? 0 : basketProducts.reduce((acc, curr) => acc + curr.price, 0)} &#8381;
                         <img src={basket} alt='basket icon' />
                     </BasketButton>
                 </NavLink>
