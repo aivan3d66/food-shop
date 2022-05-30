@@ -1,5 +1,5 @@
 import { CardControl, CardFlag, CardText, GoodCard } from './component'
-import { PopularityType } from '../../../../state/slices/testSlice'
+import { PopularityType } from '../../../../state/slices/shopPageSlice'
 import AddButton from '../../AddButton'
 import theme from '../../../../theme'
 
@@ -8,9 +8,10 @@ type GoodCardPropsType = {
     popularity: PopularityType,
     image: string,
     price: number,
+    id: string
 }
 
-export default ({ name, image, price, popularity }: GoodCardPropsType) => {
+export default ({ name, image, price, popularity, id }: GoodCardPropsType) => {
     const red = popularity === 'Hit' ? theme.colors.red : theme.colors.black
 
     return (
@@ -19,7 +20,7 @@ export default ({ name, image, price, popularity }: GoodCardPropsType) => {
 
             <CardControl>
                 <img src={image} alt='good' />
-                <AddButton />
+                <AddButton id={id}/>
             </CardControl>
             <CardText>
                 <h3>{name}</h3>
