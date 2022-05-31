@@ -59,3 +59,29 @@ export const BasketPrice = styled.div`
     margin: 40px 40px 40px 0;
   }
 `
+
+export const ValidationMessage = styled.span`
+  position: absolute;
+  bottom: -60px;
+  width: auto;
+  padding: 12px 20px;
+  color: #ffffff;
+  text-align: center;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  background-color: #000000;
+  border-radius: 8px;
+  transition: 0.3s;
+  
+  &::before {
+    position: absolute;
+    content: '';
+    top: -5px;
+    left: 50%;
+    width: 14px;
+    height: 14px;
+    background-color: #000000;
+    transform: rotate(45deg);
+  }
+`
