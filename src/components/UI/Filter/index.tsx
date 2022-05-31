@@ -64,8 +64,6 @@ export default () => {
                                 pagination={{ clickable: true }}
                                 scrollbar={{ draggable: true }}
                                 grabCursor={true}
-                                onSwiper={(swiper) => console.log(swiper)}
-                                onSlideChange={() => console.log('slide change')}
                             >
 
                                 {
