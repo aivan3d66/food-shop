@@ -1,4 +1,4 @@
-import { Basket, BasketPrice, BasketProducts, BasketWrapper } from './component'
+import { Basket, BasketPrice, BasketProducts, BasketWrapper, ValidationMessage } from './component'
 import { useActions, useAppSelector } from '../../../utils/helpers'
 import Button from '../Button/Button'
 import { shopPageActions } from '../../../state/slices/shopPageSlice'
@@ -6,10 +6,12 @@ import { NavLink } from 'react-router-dom'
 import { RouteNames } from '../../../routes/routes'
 
 export default () => {
-    const { basketProducts } = useAppSelector((state) => state.shopPageReducer)
+    const { basketProducts, deliveryAddress, deliveryFilter } = useAppSelector((state) => state.shopPageReducer)
     const { buyProducts, deleteFromBasket } = useActions({ ...shopPageActions })
 
     const price = basketProducts.length === 0 ? 0 : basketProducts.reduce((acc, curr) => acc + curr.price, 0)
+
+    const onBuyHandler = () => buyProducts({ products: [], deliveryAddress: { street: '', house: '' } })
 
     return (
         <Basket>
@@ -40,10 +42,20 @@ export default () => {
                     <span>Total price: {price}&#8381;</span>
                     <div>
                         <NavLink to={RouteNames.START_PAGE}>
-                            <Button name={'Back'} deliveryState={false}/>
+                            <Button name={'Back'} deliveryState={false} />
                         </NavLink>
-                        <Button name={'Buy'} deliveryState={basketProducts.length > 0} onClick={() => buyProducts({ products: [] })} />
+                        <Button
+                            name={'Buy'}
+                            deliveryState={basketProducts.length > 0}
+                            disabled={deliveryFilter === 'true' && deliveryAddress.street === '' && deliveryAddress.house === ''}
+                            onClick={onBuyHandler}
+                        />
                     </div>
+                    {
+                        deliveryFilter === 'true' && deliveryAddress.street === '' && deliveryAddress.house === ''
+                            ? <ValidationMessage>You must fill the delivery fields!</ValidationMessage>
+                            : ''
+                    }
                 </BasketPrice>
             </BasketWrapper>
         </Basket>
