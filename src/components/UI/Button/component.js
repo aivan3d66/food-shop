@@ -15,4 +15,10 @@ export const Button = styled.button`
     color: #ffffff;
     background-color: #b30000;
   }
+  
+  &:disabled {
+    color: #E4002B;
+    border-color: #E4002B;
+    background-color: #F7F6F5;
+  }
 `
