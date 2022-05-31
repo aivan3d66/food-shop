@@ -34,11 +34,19 @@ const shopPage = createSlice({
             state.basketProducts.push(...state.products.filter(f => f.id === action.payload.productId))
         },
         deleteFromBasket: (state, action: PayloadAction<{ productId: string }>) => {
-            state.basketProducts.findIndex(tl => tl.id === action.payload.productId) > -1 && state.basketProducts.splice(state.basketProducts.findIndex(tl => tl.id === action.payload.productId), 1);
+            state.basketProducts.findIndex(tl => tl.id === action.payload.productId) > -1 && state.basketProducts.splice(state.basketProducts.findIndex(tl => tl.id === action.payload.productId), 1)
         },
-        buyProducts: (state, action: PayloadAction<{ products: Array<GoodType> }>) => {
+        buyProducts: (state, action: PayloadAction<{ products: Array<GoodType>, deliveryAddress: DeliveryAddressType }>) => {
             console.log('You buy: ' + JSON.stringify(state.basketProducts))
+            console.log('Your address: ' + JSON.stringify(state.deliveryAddress))
             state.basketProducts = action.payload.products
+            state.deliveryAddress = action.payload.deliveryAddress
+        },
+        addDeliveryStreet: (state, action: PayloadAction<{ street: string }>) => {
+            state.deliveryAddress.street = action.payload.street
+        },
+        addDeliveryHouse: (state, action: PayloadAction<{ house: string }>) => {
+            state.deliveryAddress.house = action.payload.house
         },
     },
 })
@@ -63,10 +71,15 @@ export type CategoryType = {
     products: Array<string>,
 }
 export type DeliveryType = 'all' | 'true' | 'false'
+export type DeliveryAddressType = {
+    street: string,
+    house: string,
+}
 
 type InitialStateType = {
     filter: string,
     deliveryFilter: DeliveryType,
+    deliveryAddress: DeliveryAddressType,
     products: Array<GoodType>,
     basketProducts: Array<GoodType>,
     status: string,
