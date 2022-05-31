@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/food-shop/static/css/main.f9d57eec.css",
+    "main.js": "/food-shop/static/js/main.cee5a9c8.js",
+    "static/js/787.d082e44c.chunk.js": "/food-shop/static/js/787.d082e44c.chunk.js",
+    "static/media/logo.svg": "/food-shop/static/media/logo.3643bc3ab97c284bffe274c40b10267e.svg",
+    "static/media/basket.svg": "/food-shop/static/media/basket.67e8193ac93f0169c8425ea38fbf3240.svg",
+    "index.html": "/food-shop/index.html",
+    "main.f9d57eec.css.map": "/food-shop/static/css/main.f9d57eec.css.map",
+    "main.cee5a9c8.js.map": "/food-shop/static/js/main.cee5a9c8.js.map",
+    "787.d082e44c.chunk.js.map": "/food-shop/static/js/787.d082e44c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f9d57eec.css",
+    "static/js/main.cee5a9c8.js"
+  ]
+}
