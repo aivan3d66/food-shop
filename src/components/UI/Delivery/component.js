@@ -54,6 +54,7 @@ export const DeliveryControls = styled.div`
 `
 
 export const DeliveryBody = styled.div`
+  position: relative;
   display: flex;
   align-items: baseline;
   padding: 20px 0;

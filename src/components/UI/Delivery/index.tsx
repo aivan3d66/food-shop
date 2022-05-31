@@ -1,9 +1,15 @@
-import { Delivery, DeliveryBody, DeliveryControls, DeliveryHeader, DeliveryWrapper } from './component'
+import {
+    Delivery,
+    DeliveryBody,
+    DeliveryControls,
+    DeliveryHeader,
+    DeliveryWrapper,
+} from './component'
 import Button from '../Button/Button'
 import InputText from '../InputText/InputText'
-import { useEffect, useState } from 'react'
+import { ChangeEvent, useEffect, useState } from 'react'
 import { useActions, useAppSelector } from '../../../utils/helpers'
-import { GoodType, shopPageActions, shopPageReducer } from '../../../state/slices/shopPageSlice'
+import { GoodType, shopPageActions } from '../../../state/slices/shopPageSlice'
 import { client } from '../../../index'
 import { productsQuery } from '../Goods/queries'
 
@@ -15,7 +21,14 @@ type ProductsQueryResponseType = {
 
 export default () => {
     const [deliveryState, setDeliveryState] = useState<boolean>(false)
-    const { getProducts, filteredProducts, setAppError, changeDeliveryToggle } = useActions({ ...shopPageActions })
+    const {
+        getProducts,
+        filteredProducts,
+        setAppError,
+        changeDeliveryToggle,
+        addDeliveryStreet,
+        addDeliveryHouse,
+    } = useActions({ ...shopPageActions })
     const { products } = useAppSelector((state) => state.shopPageReducer)
 
     const getProductsQuery = () => {
@@ -44,6 +57,13 @@ export default () => {
         filteredProducts({ products: products })
     }
 
+    const onStreetFieldChange = (e: ChangeEvent<HTMLInputElement>) => {
+        addDeliveryStreet({ street: e.currentTarget.value })
+    }
+    const onHouseFieldChange = (e: ChangeEvent<HTMLInputElement>) => {
+        addDeliveryHouse({ house: e.currentTarget.value })
+    }
+
     return (
         <Delivery>
             <DeliveryWrapper>
@@ -57,14 +77,13 @@ export default () => {
                 {
                     deliveryState && <DeliveryBody>
                         <label> Street
-                            <InputText placeholder='Street' />
+                            <InputText placeholder='Street' onChange={onStreetFieldChange} />
                         </label>
                         <label> House
-                            <InputText placeholder='House' />
+                            <InputText placeholder='House' onChange={onHouseFieldChange} />
                         </label>
                     </DeliveryBody>
                 }
-
             </DeliveryWrapper>
         </Delivery>
     )
