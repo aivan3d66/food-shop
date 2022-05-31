@@ -5,6 +5,10 @@ const shopPage = createSlice({
     initialState: {
         filter: 'burger',
         deliveryFilter: 'all',
+        deliveryAddress: {
+            street: '',
+            house: '',
+        },
         products: [],
         basketProducts: [],
         status: '',
