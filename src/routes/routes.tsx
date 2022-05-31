@@ -9,7 +9,7 @@ export interface IRoute {
 }
 
 export enum RouteNames {
-    START_PAGE = '/',
+    START_PAGE = '/food-shop',
     BASKET_PAGE = '/basket-page',
 }
 

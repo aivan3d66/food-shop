@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import reportWebVitals from './reportWebVitals'
 import AppRouter from './components/BLL/AppRouter'
-import { HashRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { store } from './state/store'
 import GlobalStyles from './globalStyles'
@@ -25,14 +25,14 @@ export const client: any = new ApolloClient({
 
 root.render(
     <React.StrictMode>
-        <HashRouter>
+        <BrowserRouter>
             <ApolloProvider client={client}>
                 <Provider store={store}>
                     <AppRouter />
                     <GlobalStyles />
                 </Provider>
             </ApolloProvider>
-        </HashRouter>
+        </BrowserRouter>
     </React.StrictMode>,
 )
 
