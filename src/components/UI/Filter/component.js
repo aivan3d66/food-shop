@@ -25,6 +25,7 @@ export const FilterWrapper = styled.div`
     line-height: 24px;
 
     li {
+      text-align: center;
       cursor: pointer;
       transition: 0.3s;
     }
