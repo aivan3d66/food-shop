@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Basket = styled.div`
   position: relative;
   width: 100%;
-  padding: 20px 0;
+  padding: 20px;
   margin: 0;
 `
 
@@ -33,6 +33,15 @@ export const BasketProducts = styled.div`
 
       span {
         color: #E4002B;
+      }
+
+      @media (min-width: 768px) {
+        div {
+          display: flex;
+          justify-content: space-between;
+          min-width: 300px;
+          margin: 0 auto;
+        }
       }
     }
 
