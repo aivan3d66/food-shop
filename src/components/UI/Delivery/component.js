@@ -9,6 +9,7 @@ export const Delivery = styled.div`
 export const DeliveryWrapper = styled.div`
   max-width: 1248px;
   margin: 0 auto;
+  padding: 0 20px;
   font-size: 16px;
 `
 
@@ -44,8 +45,12 @@ export const DeliveryControls = styled.div`
   display: flex;
   
   button {
-    width: 200px;
+    width: 170px;
 
+    @media (min-width: 768px) {
+      width: 200px;
+    }
+    
     &:last-child:hover {
       color: #ffffff;
       background-color: #b30000;
