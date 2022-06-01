@@ -42,7 +42,7 @@ export const DeliveryHeader = styled.div`
 
 export const DeliveryControls = styled.div`
   display: flex;
-
+  
   button {
     width: 200px;
 
@@ -56,14 +56,26 @@ export const DeliveryControls = styled.div`
 export const DeliveryBody = styled.div`
   position: relative;
   display: flex;
-  align-items: baseline;
+  flex-direction: column;
   padding: 20px 0;
   font-size: 32px;
   line-height: 40px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
   
-  label {
+  div {
     display: flex;
     align-items: center;
-    margin-right: 20px;
+    margin: 0 0 20px 0;
+  }
+  
+  label {
+    min-width: 90px;
+  }
+  
+  input {
+    width: 100%;
   }
 `
