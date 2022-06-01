@@ -14,10 +14,10 @@ export const DeliveryWrapper = styled.div`
 
 export const DeliveryHeader = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  max-height: 100px;
+  margin: 0 0 20px 0;
   
   h1 {
     font-weight: 700;
