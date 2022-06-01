@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Header = styled.div`
   position: relative;
   width: 100%;
-  padding: 20px 0;
+  padding: 20px;
   margin: 0;
 `
 
