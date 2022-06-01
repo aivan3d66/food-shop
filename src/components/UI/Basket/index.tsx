@@ -30,8 +30,10 @@ export default () => {
 
                                 return <li key={p.id}>
                                     <img src={p.image} />
-                                    <p>{p.name}</p>
-                                    <p>Price: <span>{p.price} &#8381;</span></p>
+                                    <div>
+                                        <p>{p.name}</p>
+                                        <p>Price: <span>{p.price} &#8381;</span></p>
+                                    </div>
                                     <Button name={'Delete'} deliveryState={true} onClick={onDeleteHandler} />
                                 </li>
                             })
