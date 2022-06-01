@@ -9,13 +9,13 @@ export const Products = styled.div`
 
 export const ProductsWrapper = styled.div`
   width: 100%;
-  padding: 20px 0;
+  padding: 20px;
   background-color: #F7F6F5;
 `
 
 export const ProductsWrapperStyled = styled.div`
   width: 100%;
-  padding: 20px 0;
+  padding: 20px;
   background-color: #ffffff;
   
   li:hover {
