@@ -5,7 +5,7 @@ export const Filter = styled.div`
   top: 0;
   z-index: 2;
   width: 100%;
-  padding: 0;
+  padding: 0 20px;
   margin: 0;
   background-color: #ffffff;
 `
