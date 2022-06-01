@@ -76,12 +76,14 @@ export default () => {
                 </DeliveryHeader>
                 {
                     deliveryState && <DeliveryBody>
-                        <label> Street
-                            <InputText placeholder='Street' onChange={onStreetFieldChange} />
-                        </label>
-                        <label> House
-                            <InputText placeholder='House' onChange={onHouseFieldChange} />
-                        </label>
+                        <div>
+                            <label htmlFor='streetField'> Street </label>
+                            <InputText id='streetField' placeholder='Street' onChange={onStreetFieldChange} />
+                        </div>
+                        <div>
+                            <label htmlFor='houseField'> House </label>
+                            <InputText id='houseField' placeholder='House' onChange={onHouseFieldChange} />
+                        </div>
                     </DeliveryBody>
                 }
             </DeliveryWrapper>
