@@ -2,6 +2,7 @@ import { CardControl, CardFlag, CardText, GoodCard } from './component'
 import { PopularityType } from '../../../../state/slices/shopPageSlice'
 import AddButton from '../../AddButton'
 import theme from '../../../../theme'
+import CardImage from '../CardImage'
 
 type GoodCardPropsType = {
     name: string,
@@ -19,8 +20,9 @@ export default ({ name, image, price, popularity, id }: GoodCardPropsType) => {
             {popularity !== 'Def' ? <CardFlag red={red}>{popularity}</CardFlag> : ''}
 
             <CardControl>
-                <img src={image} alt='good' />
-                <AddButton id={id}/>
+                {/*<img src={image} alt='good' />*/}
+                <CardImage src={image} />
+                <AddButton id={id} />
             </CardControl>
             <CardText>
                 <h3>{name}</h3>

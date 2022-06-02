@@ -19,7 +19,7 @@ export default () => {
                                     products.length === 0
                                         ? <Preloader />
                                         : <>
-                                            <ul>
+                                            <ul className='categoryContainer'>
                                                 {
                                                     products.filter((f: any) => f.type === 'burger').map((m: any) => {
                                                         return <GoodCard
@@ -44,7 +44,7 @@ export default () => {
                                     products.length === 0
                                         ? <Preloader />
                                         : <>
-                                            <ul>
+                                            <ul className='categoryContainer'>
                                                 {
                                                     products.filter(f => f.type === 'twister').map((m) => {
                                                         return <GoodCard
@@ -69,7 +69,7 @@ export default () => {
                                     products.length === 0
                                         ? <Preloader />
                                         : <>
-                                            <ul>
+                                            <ul className='categoryContainer'>
                                                 {
                                                     products.filter(f => f.type === 'strips').map((m) => {
                                                         return <GoodCard
