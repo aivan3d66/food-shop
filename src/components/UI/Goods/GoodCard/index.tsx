@@ -20,7 +20,6 @@ export default ({ name, image, price, popularity, id }: GoodCardPropsType) => {
             {popularity !== 'Def' ? <CardFlag red={red}>{popularity}</CardFlag> : ''}
 
             <CardControl>
-                {/*<img src={image} alt='good' />*/}
                 <CardImage src={image} />
                 <AddButton id={id} />
             </CardControl>
