@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const GoodCard = styled.li`
+export const ProductCard = styled.li`
   position: relative;
   display: flex;
   flex-direction: column;
