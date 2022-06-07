@@ -16,8 +16,11 @@ type CategoriesQueryResponseType = {
         categories: Array<CategoryType>
     }
 }
-
-export default () => {
+type FiltersPropsType = {
+    activeCategory: string | undefined,
+    handleCLick: (name: string) => void
+}
+export default ({ activeCategory, handleCLick }: FiltersPropsType) => {
     const { categories } = useAppSelector((state) => state.shopPageReducer)
     const { getCategories, setAppError } = useActions({ ...shopPageActions })
 
