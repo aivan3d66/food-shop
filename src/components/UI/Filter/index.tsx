@@ -34,6 +34,17 @@ export default ({ activeCategory, handleCLick }: FiltersPropsType) => {
             })
     }
 
+    const categoriesRender = () => {
+        return categories.map((m, i: number) => {
+            const active = activeCategory === m.name ? 'categoryActive' : ''
+            return (
+                <SwiperSlide key={i}>
+                    <li className={`category ${active}`} onClick={() => handleCLick(m.name)}>{m.name}</li>
+                </SwiperSlide>
+            )
+        })
+    }
+
     useEffect(() => {
         getCategoriesQuery()
     }, [])
@@ -69,16 +80,7 @@ export default ({ activeCategory, handleCLick }: FiltersPropsType) => {
                                 grabCursor={true}
                             >
 
-                                {
-                                    categories.map((m, i: number) => {
-                                        const scrollId = `#${m.name}Control`
-                                        return (
-                                            <SwiperSlide key={i}>
-                                                <li><a href={scrollId}>{m.name}</a></li>
-                                            </SwiperSlide>
-                                        )
-                                    })
-                                }
+                                {categoriesRender()}
                             </Swiper>
                         </ul>
                 }
