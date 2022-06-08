@@ -6,18 +6,16 @@ import { ProductsCategory, ProductsWrapper } from './component'
 
 type ProductListsPropsType = {
     title: string
-    categoryId: string
     productsId: Array<string>
     activeCategory: string | undefined,
     setActiveCategory: Function,
     refs: any,
-    pageHeight: any
+    pageHeight: number
 }
 
 export default (
     {
         title,
-        categoryId,
         productsId,
         pageHeight,
         setActiveCategory,
@@ -27,38 +25,39 @@ export default (
 ) => {
     const { products } = useAppSelector((state) => state.shopPageReducer)
 
-    // const observerMargin = Math.floor(pageHeight / 2)
-    // const activeClass = activeCategory === categoryId ? 'character-block--active' : ''
-    //
-    // useEffect(() => {
-    //     const observerConfig = {
-    //         rootMargin: '0px',
-    //     }
-    //     const handleIntersection = function(entries: any) {
-    //         entries.forEach((entry: any) => {
-    //             if (entry.target.id !== activeCategory && entry.isIntersecting) {
-    //                 setActiveCategory(entry.target.id)
-    //             }
-    //         })
-    //     }
-    //     const observer = new IntersectionObserver(
-    //         handleIntersection,
-    //         observerConfig,
-    //     )
-    //     observer.observe(refs[title].current)
-    //     return () => observer.disconnect()
-    // }, [
-    //     activeCategory,
-    //     setActiveCategory,
-    //     observerMargin,
-    //     refs,
-    //     title,
-    //     pageHeight,
-    // ])
+    const observerMargin = Math.floor(pageHeight / 2)
+
+    useEffect(() => {
+        const observerConfig = {
+            rootMargin: `-${
+                pageHeight % 2 === 0 ? observerMargin - 1 : observerMargin
+            }px 0px -${observerMargin}px 0px`,
+        }
+        const handleIntersection = function(entries: any) {
+            entries.forEach((entry: any) => {
+                if (entry.target.id !== activeCategory && entry.isIntersecting) {
+                    setActiveCategory(entry.target.id)
+                }
+            })
+        }
+        const observer = new IntersectionObserver(
+            handleIntersection,
+            observerConfig,
+        )
+        observer.observe(refs[title].current)
+        return () => observer.disconnect()
+    }, [
+        activeCategory,
+        setActiveCategory,
+        observerMargin,
+        refs,
+        title,
+        pageHeight,
+    ])
 
     return (
         <>
-            <ProductsWrapper id='BurgersControl' className='products'>
+            <ProductsWrapper ref={refs[title]}>
                 <ProductsCategory>
                     <h2>{title}</h2>
                     {
