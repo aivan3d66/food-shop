@@ -3,7 +3,7 @@ import Filter from '../../components/UI/Filter'
 import Menu from '../../components/UI/Menu'
 import { createRef, useEffect, useState } from 'react'
 import { useAppSelector } from '../../utils/helpers'
-import ProductLists from '../../components/UI/Goods/ProductLists'
+import Goods from '../../components/UI/Goods'
 
 export const Home = () => {
     const [activeCategory, setActiveCategory] = useState()
@@ -39,22 +39,13 @@ export const Home = () => {
                 activeCategory={activeCategory}
                 handleCLick={handleCLick}
             />
-            {
-                categories.map((c, i: number) => {
-                    return (
-                        <ProductLists
-                            key={i}
-                            title={c.name}
-                            productsId={c.products}
-                            categoryId={c.id}
-                            activeCategory={activeCategory}
-                            setActiveCategory={setActiveCategory}
-                            refs={refs}
-                            pageHeight={pageHeight}
-                        />
-                    )
-                })
-            }
+            <Goods
+                activeCategory={activeCategory}
+                setActiveCategory={setActiveCategory}
+                refs={refs}
+                pageHeight={pageHeight}
+                categories={categories}
+            />
             <Menu />
         </>
     )
