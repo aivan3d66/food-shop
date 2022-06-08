@@ -6,6 +6,7 @@ import { ProductsCategory, ProductsWrapper } from './component'
 
 type ProductListsPropsType = {
     title: string
+    categoryId: string
     productsId: Array<string>
     activeCategory: string | undefined,
     setActiveCategory: Function,
@@ -17,6 +18,7 @@ export default (
     {
         title,
         productsId,
+        categoryId,
         pageHeight,
         setActiveCategory,
         activeCategory,
@@ -40,6 +42,7 @@ export default (
                 }
             })
         }
+
         const observer = new IntersectionObserver(
             handleIntersection,
             observerConfig,
@@ -57,7 +60,7 @@ export default (
 
     return (
         <>
-            <ProductsWrapper ref={refs[title]}>
+            <ProductsWrapper ref={refs[title]} id={categoryId}>
                 <ProductsCategory>
                     <h2>{title}</h2>
                     {
