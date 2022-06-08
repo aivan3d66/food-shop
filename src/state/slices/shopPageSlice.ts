@@ -18,13 +18,13 @@ const shopPage = createSlice({
         changeDeliveryToggle: (state, action: PayloadAction<{ deliveryFilter: DeliveryType }>) => {
             state.deliveryFilter = action.payload.deliveryFilter
         },
-        getProducts: (state, action: PayloadAction<{ products: Array<GoodType> }>) => {
+        getProducts: (state, action: PayloadAction<{ products: Array<ProductType> }>) => {
             state.products = action.payload.products
         },
         getCategories: (state, action: PayloadAction<{ categories: Array<CategoryType> }>) => {
             state.categories = action.payload.categories
         },
-        filteredProducts: (state, action: PayloadAction<{ products: Array<GoodType> }>) => {
+        filteredProducts: (state, action: PayloadAction<{ products: Array<ProductType> }>) => {
             state.products = action.payload.products
         },
         setAppError: (state, action: PayloadAction<{ status: string }>) => {
@@ -36,7 +36,7 @@ const shopPage = createSlice({
         deleteFromBasket: (state, action: PayloadAction<{ productId: string }>) => {
             state.basketProducts.findIndex(tl => tl.id === action.payload.productId) > -1 && state.basketProducts.splice(state.basketProducts.findIndex(tl => tl.id === action.payload.productId), 1)
         },
-        buyProducts: (state, action: PayloadAction<{ products: Array<GoodType>, deliveryAddress: DeliveryAddressType }>) => {
+        buyProducts: (state, action: PayloadAction<{ products: Array<ProductType>, deliveryAddress: DeliveryAddressType }>) => {
             console.log('You buy: ' + JSON.stringify(state.basketProducts))
             console.log('Your address: ' + JSON.stringify(state.deliveryAddress))
             state.basketProducts = action.payload.products
@@ -56,13 +56,12 @@ export const shopPageActions = shopPage.actions
 
 export type PopularityType = 'Hit' | 'New' | 'Def'
 export type FilterType = 'burger'
-export type GoodType = {
+export type ProductType = {
     id: string,
     name: string,
     popularity: PopularityType,
     image: string,
     price: number,
-    type: string,
     delivery: boolean,
 }
 export type CategoryType = {
@@ -80,8 +79,8 @@ type InitialStateType = {
     filter: string,
     deliveryFilter: DeliveryType,
     deliveryAddress: DeliveryAddressType,
-    products: Array<GoodType>,
-    basketProducts: Array<GoodType>,
+    products: Array<ProductType>,
+    basketProducts: Array<ProductType>,
     status: string,
     categories: Array<CategoryType>
 }
