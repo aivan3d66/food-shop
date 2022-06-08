@@ -18,24 +18,26 @@ export const FilterWrapper = styled.div`
 
   ul {
     display: flex;
-    justify-content: space-between;
-    margin: 0;
-    padding: 10px 0;
+    padding: 0;
     font-size: 18px;
     line-height: 24px;
+  }
+`
 
-    li {
-      text-align: center;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+export const Slide = styled.li`
+  flex-grow: 1;
+  padding: 10px 0;
+  color: #9D9D9D;
+  text-align: center;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: 0.3s;
 
-    a {
-      color: #000000;
-
-      &:hover {
-        color: #E4002B;
-      }
+  span {
+    width: 100%;
+    
+    &:hover {
+      color: #E4002B;
     }
   }
 `
