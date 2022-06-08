@@ -9,13 +9,13 @@ import Button from '../Button/Button'
 import InputText from '../InputText/InputText'
 import { ChangeEvent, useEffect, useState } from 'react'
 import { useActions, useAppSelector } from '../../../utils/helpers'
-import { GoodType, shopPageActions } from '../../../state/slices/shopPageSlice'
+import { ProductType, shopPageActions } from '../../../state/slices/shopPageSlice'
 import { client } from '../../../index'
 import { productsQuery } from '../Goods/queries'
 
 type ProductsQueryResponseType = {
     data: {
-        products: Array<GoodType>
+        products: Array<ProductType>
     }
 }
 
@@ -48,7 +48,7 @@ export default () => {
     const setDeliveryHandler = () => {
         setDeliveryState(true)
         changeDeliveryToggle({ deliveryFilter: 'true' })
-        filteredProducts({ products: products.filter((f: GoodType) => f.delivery) })
+        filteredProducts({ products: products.filter((f: ProductType) => f.delivery) })
     }
     const setPickUpHandler = () => {
         setDeliveryState(false)
