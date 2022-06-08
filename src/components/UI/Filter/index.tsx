@@ -1,4 +1,4 @@
-import { Filter, FilterWrapper } from './component'
+import { Filter, FilterWrapper, Slide } from './component'
 import { useActions, useAppSelector } from '../../../utils/helpers'
 import { client } from '../../../index'
 import { useEffect } from 'react'
@@ -7,6 +7,7 @@ import Preloader from '../Preloader'
 import { categoriesQuery } from './queries'
 import { SwiperSlide, Swiper } from 'swiper/react'
 import { A11y } from 'swiper'
+import theme from '../../../theme'
 
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -36,7 +37,11 @@ export default ({ activeCategory, handleCLick }: FiltersPropsType) => {
 
     const categoriesRender = () => {
         return categories.map((m, i: number) => {
-            const active = activeCategory === m.name ? 'categoryActive' : ''
+            const activeStyle = activeCategory === m.id ? {
+                color: theme.colors.darkRed,
+                borderBottomColor: theme.colors.darkRed,
+            } : { color: theme.colors.black }
+
             return (
                 <SwiperSlide key={i}>
                     <li className={`category ${active}`} onClick={() => handleCLick(m.name)}>{m.name}</li>
@@ -67,19 +72,17 @@ export default ({ activeCategory, handleCLick }: FiltersPropsType) => {
                                         slidesPerView: 6,
                                     },
                                     1120: {
-                                        slidesPerView: 11,
+                                        slidesPerView: 8,
                                     },
                                     1230: {
-                                        slidesPerView: 11,
+                                        slidesPerView: 10,
                                     },
 
                                 }}
                                 centeredSlidesBounds={true}
-                                pagination={{ clickable: true }}
                                 scrollbar={{ draggable: true }}
                                 grabCursor={true}
                             >
-
                                 {categoriesRender()}
                             </Swiper>
                         </ul>
