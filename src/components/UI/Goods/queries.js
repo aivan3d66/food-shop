@@ -8,7 +8,6 @@ export const productsQuery = gql`
         popularity
         image
         price
-        type
         delivery
     }
   }
