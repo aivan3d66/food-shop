@@ -23,18 +23,20 @@ export default (
         <Goods>
             {
                 categories.map((c, i: number) => {
-                    return (
-                        <ProductLists
-                            key={i}
-                            title={c.name}
-                            productsId={c.products}
-                            categoryId={c.id}
-                            activeCategory={activeCategory}
-                            setActiveCategory={setActiveCategory}
-                            refs={refs}
-                            pageHeight={pageHeight}
-                        />
-                    )
+                    if (c.products.length !== 0) {
+                        return (
+                            <ProductLists
+                                key={i}
+                                title={c.name}
+                                productsId={c.products}
+                                categoryId={c.id}
+                                activeCategory={activeCategory}
+                                setActiveCategory={setActiveCategory}
+                                refs={refs}
+                                pageHeight={pageHeight}
+                            />
+                        )
+                    }
                 })
             }
         </Goods>

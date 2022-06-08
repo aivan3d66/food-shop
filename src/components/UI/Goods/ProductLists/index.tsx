@@ -64,7 +64,7 @@ export default (
                 <ProductsCategory>
                     <h2>{title}</h2>
                     {
-                        productsId.length === 0
+                        products.length === 0
                             ? <Preloader />
                             : <>
                                 <ul>
