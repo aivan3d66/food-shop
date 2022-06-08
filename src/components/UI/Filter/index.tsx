@@ -44,7 +44,13 @@ export default ({ activeCategory, handleCLick }: FiltersPropsType) => {
 
             return (
                 <SwiperSlide key={i}>
-                    <li className={`category ${active}`} onClick={() => handleCLick(m.name)}>{m.name}</li>
+                    <Slide
+                        id={m.name}
+                        style={activeStyle}
+                        onClick={() => handleCLick(m.name)}
+                    >
+                        <span>{m.name}</span>
+                    </Slide>
                 </SwiperSlide>
             )
         })
