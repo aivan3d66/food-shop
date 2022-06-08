@@ -35,8 +35,26 @@ export const Home = () => {
     return (
         <>
             <Delivery />
-            <Filter />
-            <Goods />
+            <Filter
+                activeCategory={activeCategory}
+                handleCLick={handleCLick}
+            />
+            {
+                categories.map((c, i: number) => {
+                    return (
+                        <ProductLists
+                            key={i}
+                            title={c.name}
+                            productsId={c.products}
+                            categoryId={c.id}
+                            activeCategory={activeCategory}
+                            setActiveCategory={setActiveCategory}
+                            refs={refs}
+                            pageHeight={pageHeight}
+                        />
+                    )
+                })
+            }
             <Menu />
         </>
     )
