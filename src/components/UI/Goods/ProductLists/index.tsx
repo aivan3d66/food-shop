@@ -60,8 +60,8 @@ export default (
 
     return (
         <>
-            <ProductsWrapper ref={refs[title]} id={categoryId}>
-                <ProductsCategory>
+            <ProductsWrapper>
+                <ProductsCategory ref={refs[title]} id={categoryId}>
                     <h2>{title}</h2>
                     {
                         products.length === 0
