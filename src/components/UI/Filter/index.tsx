@@ -72,7 +72,7 @@ export default ({ activeCategory, handleCLick }: FiltersPropsType) => {
                                 spaceBetween={20}
                                 breakpoints={{
                                     320: {
-                                        slidesPerView: 5,
+                                        slidesPerView: 4,
                                     },
                                     768: {
                                         slidesPerView: 6,
