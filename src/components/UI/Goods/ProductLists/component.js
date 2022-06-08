@@ -7,20 +7,10 @@ export const Products = styled.div`
   margin: 0;
 `
 
-export const ProductsWrapper = styled.div`
+export const ProductsWrapper = styled.section`
   width: 100%;
   padding: 20px;
   background-color: #F7F6F5;
-`
-
-export const ProductsWrapperStyled = styled.div`
-  width: 100%;
-  padding: 20px;
-  background-color: #ffffff;
-  
-  li:hover {
-    background-color: #F7F6F5;
-  }
 `
 
 export const ProductsCategory = styled.div`
@@ -30,7 +20,7 @@ export const ProductsCategory = styled.div`
   font-size: 16px;
 
   h2 {
-    margin: 40px 0;
+    margin: 40px 20px;
     font-size: 32px;
     font-weight: normal;
     line-height: 40px;
