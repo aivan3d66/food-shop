@@ -17,9 +17,25 @@ const CardImage = ({ src }) => {
     })
     return (
         <div ref={ref}>
-            {isVisible && (
-                <img src={src} alt='product' />
-            )}
+            {
+                isVisible
+                    ? <img src={src} alt='product' />
+                    : <p style={{
+                        fontWeight: 'bold',
+                        lineHeight: '70px',
+                        fontSize: '62px',
+                        color: '#bababa',
+                    }}>?</p>
+            }
+
+            {/*{*/}
+            {/*    isVisible && <p style={{*/}
+            {/*        fontWeight: 'bold',*/}
+            {/*        lineHeight: '70px',*/}
+            {/*        fontSize: '62px',*/}
+            {/*        color: '#bababa',*/}
+            {/*    }}>?</p>*/}
+            {/*}*/}
         </div>
     )
 }
