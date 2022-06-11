@@ -27,15 +27,6 @@ const CardImage = ({ src }) => {
                         color: '#bababa',
                     }}>?</p>
             }
-
-            {/*{*/}
-            {/*    isVisible && <p style={{*/}
-            {/*        fontWeight: 'bold',*/}
-            {/*        lineHeight: '70px',*/}
-            {/*        fontSize: '62px',*/}
-            {/*        color: '#bababa',*/}
-            {/*    }}>?</p>*/}
-            {/*}*/}
         </div>
     )
 }

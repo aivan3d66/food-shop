@@ -28,9 +28,9 @@ export const BasketProducts = styled.div`
       padding: 20px 0;
       align-items: center;
       font-weight: 400;
-      font-size: 24px;
+      font-size: 18px;
       line-height: 32px;
-
+      
       span {
         color: #E4002B;
       }
@@ -42,6 +42,10 @@ export const BasketProducts = styled.div`
           min-width: 300px;
           margin: 0 auto;
         }
+      }
+      
+      @media (min-width: 768px) {
+        font-size: 24px;
       }
     }
 
