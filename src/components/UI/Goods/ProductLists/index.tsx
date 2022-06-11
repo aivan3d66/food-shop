@@ -31,9 +31,7 @@ export default (
 
     useEffect(() => {
         const observerConfig = {
-            rootMargin: `-${
-                pageHeight % 2 === 0 ? observerMargin - 1 : observerMargin
-            }px 0px -${observerMargin}px 0px`,
+            rootMargin: '0px',
         }
         const handleIntersection = function(entries: any) {
             entries.forEach((entry: any) => {
