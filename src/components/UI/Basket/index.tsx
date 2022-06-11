@@ -1,4 +1,4 @@
-import { Basket, BasketPrice, BasketProducts, BasketWrapper, ValidationMessage } from './component'
+import { Basket, BasketEmpty, BasketPrice, BasketProducts, BasketWrapper, ValidationMessage } from './component'
 import { useActions, useAppSelector } from '../../../utils/helpers'
 import Button from '../Button/Button'
 import { shopPageActions } from '../../../state/slices/shopPageSlice'
@@ -18,7 +18,7 @@ export default () => {
             <BasketWrapper>
                 <BasketProducts>
                     <h1>
-                        Products: {basketProducts.length === 0 && 'basket is empty'}
+                        Products: <BasketEmpty>{basketProducts.length === 0 && 'basket is empty'}</BasketEmpty>
                     </h1>
                     <ul>
                         {

@@ -53,6 +53,11 @@ export const BasketProducts = styled.div`
   }
 `
 
+export const BasketEmpty = styled.span`
+  color: #E4002B;
+  font-weight: normal;
+`
+
 export const BasketPrice = styled.div`
   display: flex;
   flex-direction: column;
