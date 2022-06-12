@@ -12,7 +12,10 @@ export default () => {
 
     const price = basketProducts.length === 0 ? 0 : basketProducts.reduce((acc, curr) => acc + curr.price, 0)
 
-    const onBuyHandler = () => buyProducts({ products: [], deliveryAddress: { street: '', house: '' } })
+    const onBuyHandler = () => {
+        alert(`Operation successful!`)
+        buyProducts({ products: [], deliveryAddress: { street: '', house: '' } })
+    }
 
     return (
         <Basket>
