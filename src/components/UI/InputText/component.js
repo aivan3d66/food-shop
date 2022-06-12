@@ -13,6 +13,6 @@ export const InputText = styled.input`
   transition: 0.3s;
   
   &:hover {
-    border-color: #9D9D9D;
+    border-color: #b30000;
   }
 `
