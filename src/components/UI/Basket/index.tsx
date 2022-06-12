@@ -1,9 +1,10 @@
-import { Basket, BasketEmpty, BasketPrice, BasketProducts, BasketWrapper, ValidationMessage } from './component'
+import { Basket, BasketEmpty, BasketPrice, BasketProducts, BasketWrapper, Price, ValidationMessage } from './component'
 import { useActions, useAppSelector } from '../../../utils/helpers'
 import Button from '../Button/Button'
 import { shopPageActions } from '../../../state/slices/shopPageSlice'
 import { NavLink } from 'react-router-dom'
 import { RouteNames } from '../../../routes/routes'
+import BasketProduct from './BasketProduct'
 
 export default () => {
     const { basketProducts, deliveryAddress, deliveryFilter } = useAppSelector((state) => state.shopPageReducer)
@@ -28,23 +29,24 @@ export default () => {
                                     deleteFromBasket({ productId: p.id })
                                 }
 
-                                return <li key={p.id}>
-                                    <img src={p.image} alt='product'/>
-                                    <div>
-                                        <p>{p.name}</p>
-                                        <p>Price: <span>{p.price} &#8381;</span></p>
-                                    </div>
-                                    <Button name={'Delete'} deliveryState={true} onClick={onDeleteHandler} />
-                                </li>
+                                return (
+                                    <BasketProduct
+                                        key={p.id}
+                                        name={p.name}
+                                        image={p.image}
+                                        price={p.price}
+                                        onDeleteHandler={onDeleteHandler}
+                                    />
+                                )
                             })
                         }
                     </ul>
                 </BasketProducts>
                 <BasketPrice>
-                    <span>Total price: {price}&#8381;</span>
+                    <Price>Total price: {price}&#8381;</Price>
                     <div>
                         <NavLink to={RouteNames.START_PAGE}>
-                            <Button name={'Back'}/>
+                            <Button name={'Back'} />
                         </NavLink>
                         <Button
                             name={'Buy'}
