@@ -29,7 +29,7 @@ export default () => {
                                 }
 
                                 return <li key={p.id}>
-                                    <img src={p.image} />
+                                    <img src={p.image} alt='product'/>
                                     <div>
                                         <p>{p.name}</p>
                                         <p>Price: <span>{p.price} &#8381;</span></p>
@@ -44,7 +44,7 @@ export default () => {
                     <span>Total price: {price}&#8381;</span>
                     <div>
                         <NavLink to={RouteNames.START_PAGE}>
-                            <Button name={'Back'} deliveryState={false} />
+                            <Button name={'Back'}/>
                         </NavLink>
                         <Button
                             name={'Buy'}
