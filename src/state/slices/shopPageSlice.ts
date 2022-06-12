@@ -55,7 +55,6 @@ export const shopPageReducer = shopPage.reducer
 export const shopPageActions = shopPage.actions
 
 export type PopularityType = 'Hit' | 'New' | 'Def'
-export type FilterType = 'burger'
 export type ProductType = {
     id: string,
     name: string,
