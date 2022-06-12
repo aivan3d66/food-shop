@@ -34,7 +34,8 @@ export const BasketPrice = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  
+  border-top: 1px solid #f2f2f2;
+
   button {
     margin: 40px 40px 40px 0;
   }
